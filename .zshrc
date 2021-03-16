@@ -76,6 +76,14 @@ mdpdf(){
 }
 
 mkrep(){
+
+if [ "$#" -lt 2 ]
+then
+  echo "Input(s) missing!"
+  echo "Usage : mkrep <language> file1.ext .."
+  echo "Example: mkrep python helloworld.py"
+fi
+
 cat <<EOT >> temp.txt
 ---
 header-includes:
