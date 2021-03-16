@@ -50,12 +50,7 @@ export LANG=en_US.UTF-8
 # Aliases
 alias zshconfig="vi ~/.zshrc"
 alias viconfig="vi ~/.vimrc"
-alias sscu="ssh jitins@10.96.19.245"
-alias cray="ssh metnair@xc40.serc.iisc.ernet.in"
-alias cahn="ssh jitin@10.194.12.38"
-alias abhikmmg="ssh abhikmmg@10.194.33.32"
 alias untar='tar -zxvf'
-alias gclus="ssh jitin@10.194.33.12"
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 
 #thefuck config
