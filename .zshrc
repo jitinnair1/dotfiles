@@ -62,10 +62,6 @@ eval $(thefuck --alias)
 #fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#VTK Libraries
-export PATH=/usr/local/vtk/:$PATH
-export DYLD_LIBRARY_PATH=/usr/local/vtk/:$DYLD_LIBRARY_PATH
-
 #zsh functions
 make_gif(){
   convert -delay $1 -loop 0 "${@:2}" myimage.gif
@@ -121,3 +117,14 @@ vergrid(){
 fourgrid(){
   montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x2 $1 $2 $3 $4 grid.png;
 }
+
+# Choose the directory containing the latest version of GCC
+# as indicated by the highest number suffixed to
+# the filepath of the package directory
+print -v version /usr/local/opt/gcc@<->(n[-1])
+version=${version#*@}
+for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
+    tail=${file:t}
+    ln -sf ${file} /usr/local/bin/${tail%-*}
+done
+
