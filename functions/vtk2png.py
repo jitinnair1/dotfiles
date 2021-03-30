@@ -31,7 +31,7 @@ animationScene1.UpdateAnimationUsingDataTimeSteps()
 renderView1 = GetActiveViewOrCreate('RenderView')
 
 # show data in view
-time_Display = Show(time_, renderView1, 'StructuredGridRepresentation')
+time_Display = Show(time_, renderView1)
 
 # hide color bar/color legend
 time_Display.SetScalarBarVisibility(renderView1, False)
