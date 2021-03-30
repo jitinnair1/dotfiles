@@ -5,4 +5,6 @@ ln -sf $SCRIPT_DIR/.vim/plugins.vim ~/plugins.vim
 ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
 ln -sf $SCRIPT_DIR/.leptonrc ~/.leptonrc
 ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
+ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
+ln -sf $SCRIPT_DIR/functions/vtk2png.py /usr/local/bin/vtk2png.py
 
