@@ -118,13 +118,12 @@ fourgrid(){
   montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x2 $1 $2 $3 $4 grid.png;
 }
 
-# Choose the directory containing the latest version of GCC
-# as indicated by the highest number suffixed to
-# the filepath of the package directory
+# Map GCC to the version installed by Homebrew on macOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
 print -v version /usr/local/opt/gcc@<->(n[-1])
 version=${version#*@}
 for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
     tail=${file:t}
     ln -sf ${file} /usr/local/bin/${tail%-*}
 done
-
+fi
