@@ -15,6 +15,7 @@ projectname=sys.argv[1]
 
 #### import the simple module from the paraview
 from paraview.simple import *
+
 #### disable automatic camera reset on 'Show'
 paraview.simple._DisableFirstRenderCameraReset()
 
@@ -48,9 +49,11 @@ renderView1.CameraParallelScale = 180.31222920256963
 # save animation
 if not os.path.exists('images'):
     os.makedirs('images')
+
 SaveAnimation(cwd + '/images/'+projectname+'.png', renderView1, ImageResolution=[600, 600],
     OverrideColorPalette='WhiteBackground',
     TransparentBackground=1,
     FrameWindow=[0, 36], 
     # PNG options
     SuffixFormat='_%02d')
+
