@@ -127,3 +127,6 @@ for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
     ln -sf ${file} /usr/local/bin/${tail%-*}
 done
 fi
+
+#Map gmake to make
+export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
