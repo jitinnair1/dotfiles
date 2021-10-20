@@ -129,4 +129,6 @@ done
 fi
 
 #Map gmake to make
+if [[ "$OSTYPE" == "darwin"* ]]; then
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+fi
