@@ -31,7 +31,7 @@ export ZSH=$HOME/.oh-my-zsh
   sudo
   copydir
   copyfile
-  osx
+  macos
   debian
   zsh-autosuggestions
   zsh-syntax-highlighting
