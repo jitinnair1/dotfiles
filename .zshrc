@@ -35,6 +35,7 @@ export ZSH=$HOME/.oh-my-zsh
   debian
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-z
 )
 
 # Disable bracketed-magic-paste to fix slow paste
@@ -43,8 +44,8 @@ DISABLE_MAGIC_FUNCTIONS=true
 source $ZSH/oh-my-zsh.sh
 
 # Set language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
 
 
 # Aliases
