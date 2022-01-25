@@ -7,6 +7,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()
