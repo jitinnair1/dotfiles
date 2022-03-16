@@ -29,7 +29,7 @@ export ZSH=$HOME/.oh-my-zsh
   git
   github
   sudo
-  copydir
+  copypath
   copyfile
   macos
   debian
