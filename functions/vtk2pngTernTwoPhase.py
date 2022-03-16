@@ -11,7 +11,7 @@ try:
   from natsort import natsorted
 except ImportError:
   print("Trying to Install required module: natsort\n")
-  os.system('python -m pip install natsort')
+  os.system('python3 -m pip install natsort')
 # -- above lines try to install requests module if not present
 # -- if all went well, import required module again ( for global access)
 
@@ -137,7 +137,7 @@ renderView1.CameraParallelScale = 298.62112825316177
 if not os.path.exists('images'):
     os.makedirs('images')
 
-SaveAnimation(cwd + '/images/'+projectname+'.png', renderView1, ImageResolution=[600, 600],
+SaveAnimation(cwd + '/images/'+projectname+'.png', renderView1, ImageResolution=[800, 800],
     TransparentBackground=1,
     FrameWindow=[0, 10], 
     # PNG options
