@@ -47,6 +47,9 @@ source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 
+# Go Path
+export GOPATH=/Users/$USER/go
+export PATH=$GOPATH/bin:$PATH
 
 # Aliases
 alias zshconfig="vi ~/.zshrc"
