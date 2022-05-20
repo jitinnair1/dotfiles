@@ -136,3 +136,13 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 fi
+
+#Setup NVIDIA HPC SDK
+NVARCH=`uname -s`_`uname -m`; export NVARCH
+NVCOMPILERS=/opt/nvidia/hpc_sdk; export NVCOMPILERS
+MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/22.3/compilers/man; export MANPATH
+PATH=$NVCOMPILERS/$NVARCH/22.3/compilers/bin:$PATH; export PATH
+
+#OpenMPI commans and man pages
+export PATH=$NVCOMPILERS/$NVARCH/22.3/comm_libs/mpi/bin:$PATH
+export MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/22.3/comm_libs/mpi/man
