@@ -1,4 +1,4 @@
-# Console initialisation code to be run before p10k prompt 
+#Console initialisation code to be run before p10k prompt 
 plugins=(
   ssh-agent
 )
@@ -36,6 +36,7 @@ export ZSH=$HOME/.oh-my-zsh
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-z
+  zsh-fzf-history-search
 )
 
 # Disable bracketed-magic-paste to fix slow paste
@@ -137,12 +138,45 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 fi
 
-#Setup NVIDIA HPC SDK
-NVARCH=`uname -s`_`uname -m`; export NVARCH
-NVCOMPILERS=/opt/nvidia/hpc_sdk; export NVCOMPILERS
-MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/22.3/compilers/man; export MANPATH
-PATH=$NVCOMPILERS/$NVARCH/22.3/compilers/bin:$PATH; export PATH
+# NVHPC
+NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
+NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
+MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/compilers/man"; export MANPATH
+PATH="$NVCOMPILERS/$NVARCH/22.9/compilers/bin:$PATH"; export PATH
 
-#OpenMPI commans and man pages
-export PATH=$NVCOMPILERS/$NVARCH/22.3/comm_libs/mpi/bin:$PATH
-export MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/22.3/comm_libs/mpi/man
+# MPI
+export PATH="$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/bin:$PATH"
+export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/man"
+
+# NVHPC Libraries
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/math_libs/lib64/"
+
+#libGLEW error during Paraview Initialisation
+export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libGLEW.so"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+
+# Ruby exports
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
