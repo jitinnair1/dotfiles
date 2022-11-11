@@ -1,4 +1,13 @@
-#Console initialisation code to be run before p10k prompt 
+# First Run Checks
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+fi
+
+# Console initialisation code to be run before p10k prompt 
 plugins=(
   ssh-agent
 )
@@ -11,7 +20,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Save History only upto 100 items
+# Save History only upto 1000 items
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -33,6 +42,7 @@ export ZSH=$HOME/.oh-my-zsh
   copyfile
   macos
   debian
+  zsh-z
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-z
@@ -148,35 +158,9 @@ PATH="$NVCOMPILERS/$NVARCH/22.9/compilers/bin:$PATH"; export PATH
 export PATH="$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/bin:$PATH"
 export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/man"
 
-# NVHPC Libraries
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/math_libs/lib64/"
-
-#libGLEW error during Paraview Initialisation
-export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libGLEW.so"
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-### End of Zinit's installer chunk
-
-# Ruby exports
-export GEM_HOME=$HOME/gems
-export PATH=$HOME/gems/bin:$PATH
+# Fix GCC linking on M1
+# if [[ $(uname -m) == 'x86_64' ]]; then
+#   print -v version /usr/local/opt/gcc@<->(n[-1])
+# else
+#   print -v version /opt/homebrew/bin/gcc@<->(n[-1])
+# fi
