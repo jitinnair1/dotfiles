@@ -39,12 +39,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
  plugins=(
-  git
-  github
   sudo
   copypath
   copyfile
-  macos
   debian
   autoupdate
   zsh-fzf-history-search
@@ -82,15 +79,15 @@ eval $(thefuck --alias)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zsh functions
-make_gif(){
+function make_gif(){
   convert -delay $1 -loop 0 "${@:2}" myimage.gif
 }
 
-mdpdf(){
+function mdpdf(){
   pandoc -V geometry:margin=0.8in $@ -s -o "${$(echo "$@" | cut -f 1 -d '.')}".pdf --pdf-engine=xelatex;
 }
 
-mkrep(){
+function mkrep(){
 
 if [ "$#" -lt 2 ]
 then
@@ -125,15 +122,15 @@ do
 done
 }
 
-horgrid(){
+function horgrid(){
   montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x1 $1 $2 grid_horizontal.png;
 }
 
-vergrid(){
+function vergrid(){
   montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 1x2 $1 $2 grid_vertical.png;
 }
 
-fourgrid(){
+function fourgrid(){
   montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x2 $1 $2 $3 $4 grid.png;
 }
 
