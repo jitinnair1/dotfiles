@@ -5,6 +5,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+  git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
 fi
 
 # Console initialisation code to be run before p10k prompt 
@@ -42,11 +43,10 @@ export ZSH=$HOME/.oh-my-zsh
   copyfile
   macos
   debian
+  zsh-fzf-history-search
   zsh-z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-z
-  zsh-fzf-history-search
 )
 
 # Disable bracketed-magic-paste to fix slow paste
@@ -68,16 +68,16 @@ alias viconfig="vi ~/.vimrc"
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 
-#thefuck config
+# thefuck config
 eval $(thefuck --alias)
 
-#To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#fzf config
+# fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#zsh functions
+# zsh functions
 make_gif(){
   convert -delay $1 -loop 0 "${@:2}" myimage.gif
 }
@@ -143,7 +143,7 @@ for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
 done
 fi
 
-#Map gmake to make
+# Map gmake to make
 if [[ "$OSTYPE" == "darwin"* ]]; then
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 fi
