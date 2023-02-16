@@ -1,0 +1,3 @@
+function mdpdf(){
+  pandoc -V geometry:margin=0.8in $@ -s -o "${$(echo "$@" | cut -f 1 -d '.')}".pdf --pdf-engine=xelatex;
+}

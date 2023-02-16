@@ -1,0 +1,3 @@
+function vergrid(){
+  montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 1x2 $1 $2 grid_vertical.png;
+}

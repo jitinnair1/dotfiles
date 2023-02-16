@@ -85,61 +85,16 @@ eval $(thefuck --alias)
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# autoload zsh functions
+fpath+=~/GitHub/dotfiles/zshfunctions
+
 # zsh functions
-function make_gif(){
-  convert -delay $1 -loop 0 "${@:2}" myimage.gif
-}
-
-function mdpdf(){
-  pandoc -V geometry:margin=0.8in $@ -s -o "${$(echo "$@" | cut -f 1 -d '.')}".pdf --pdf-engine=xelatex;
-}
-
-function mkrep(){
-
-if [ "$#" -lt 2 ]
-then
-  echo "Input(s) missing!"
-  echo "Usage : mkrep <language> file1.ext .."
-  echo "Example: mkrep python helloworld.py"
-fi
-
-cat <<EOT >> temp.txt
----
-header-includes:
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\\\{\}}
----
-
-
-EOT
-
-frontmatter='~~~'
-frontmatter="$frontmatter$1"
-for eachfile in ${@:2}
-do
-  filename=$(echo $eachfile | cut -f 1 -d '.')
-	touch $filename.md
-  echo "$frontmatter" >> "$filename.md"
-  cat $eachfile >> $filename.md
-	echo '\n~~~' >> $filename.md
-  cat $filename.md >> temp.txt
-  mv temp.txt $filename.md
-	pandoc -V geometry:margin=1in $filename.md -s --pdf-engine=xelatex -o $filename.pdf
-  rm $filename.md
-done
-}
-
-function horgrid(){
-  montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x1 $1 $2 grid_horizontal.png;
-}
-
-function vergrid(){
-  montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 1x2 $1 $2 grid_vertical.png;
-}
-
-function fourgrid(){
-  montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x2 $1 $2 $3 $4 grid.png;
-}
+autoload make_gif
+autoload mdpdf
+autoload mkrep
+autoload horgrid
+autoload vergrid
+autoload fourgrid
 
 # Map GCC to the version installed by Homebrew on macOS
 if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'x86_64' ]]; then

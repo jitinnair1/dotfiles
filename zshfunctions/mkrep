@@ -1,0 +1,34 @@
+function mkrep(){
+
+if [ "$#" -lt 2 ]
+then
+  echo "Input(s) missing!"
+  echo "Usage : mkrep <language> file1.ext .."
+  echo "Example: mkrep python helloworld.py"
+fi
+
+cat <<EOT >> temp.txt
+---
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\\\{\}}
+---
+
+
+EOT
+
+frontmatter='~~~'
+frontmatter="$frontmatter$1"
+for eachfile in ${@:2}
+do
+  filename=$(echo $eachfile | cut -f 1 -d '.')
+  touch $filename.md
+  echo "$frontmatter" >> "$filename.md"
+  cat $eachfile >> $filename.md
+  echo '\n~~~' >> $filename.md
+  cat $filename.md >> temp.txt
+  mv temp.txt $filename.md
+  pandoc -V geometry:margin=1in $filename.md -s --pdf-engine=xelatex -o $filename.pdf
+  rm $filename.md
+done
+}

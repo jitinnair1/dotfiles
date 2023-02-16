@@ -1,0 +1,3 @@
+function fourgrid(){
+  montage -mode concatenate -geometry +2+2 -label "%t" -font Helvetica -pointsize 32 -tile 2x2 $1 $2 $3 $4 grid.png;
+}
