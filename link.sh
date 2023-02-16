@@ -45,6 +45,9 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
+ln -sf $SCRIPT_DIR/.zshrc-Darwin ~/.zshrc-Darwin
+ln -sf $SCRIPT_DIR/.zshrc-Linux ~/.zshrc-Linux
+
 
 #lepton
 ln -sf $SCRIPT_DIR/.leptonrc ~/.leptonrc

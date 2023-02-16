@@ -96,31 +96,5 @@ autoload horgrid
 autoload vergrid
 autoload fourgrid
 
-# Map GCC to the version installed by Homebrew on macOS
-if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'x86_64' ]]; then
-print -v version /usr/local/opt/gcc@<->(n[-1])
-version=${version#*@}
-for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
-    tail=${file:t}
-    ln -sf ${file} /usr/local/bin/${tail%-*}
-done
-fi
-
-# Map gmake to make
-if [[ "$OSTYPE" == "darwin"* ]]; then
-export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
-fi
-
-# NVHPC
-NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
-NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
-MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/compilers/man"; export MANPATH
-PATH="$NVCOMPILERS/$NVARCH/23.1/compilers/bin:$PATH"; export PATH
-
-# MPI
-export PATH="$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/bin:$PATH"
-export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/man"
-
-# Map GCC to the version installed by Homebrew on macOS
-if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'arm64' ]]; then
-fi
+# Load .zshrc specific to OS
+source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"

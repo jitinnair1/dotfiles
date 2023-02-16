@@ -1,0 +1,14 @@
+# Map gmake to make
+if [[ "$OSTYPE" == "darwin"* ]]; then
+export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+fi
+
+# NVHPC
+NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
+NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
+MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/compilers/man"; export MANPATH
+PATH="$NVCOMPILERS/$NVARCH/23.1/compilers/bin:$PATH"; export PATH
+
+# MPI
+export PATH="$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/bin:$PATH"
+export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/man"
