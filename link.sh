@@ -23,13 +23,15 @@ ln -sf $SCRIPT_DIR/plugins.vim ~/.vim/plugins.vim
 
 #tmux
 if [ ! -f ~/.tmux.conf ]; then
-  echo "tmux may not be installed/set up correctly"
-  exit 0
+  echo "tmux may not be installed/set up correctly. Trying to create a ~/.tmux.conf"
+  touch ~/.tmux.conf
+fi
+
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
-ln -sf $SCRIPT_DIR/plugins.vim ~/.vim/plugins.vim
-
 
 #zsh
 if [ ! -f ~/.zshrc ]; then
