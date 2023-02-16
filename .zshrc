@@ -65,7 +65,8 @@ export GOPATH=/Users/$USER/go
 export PATH=$GOPATH/bin:$PATH
 
 # Aliases
-alias zshconfig="vi ~/.zshrc"
+alias zconfig="vi ~/.zshrc"
+alias zsource="source ~/.zshrc"
 alias viconfig="vi ~/.vimrc"
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"

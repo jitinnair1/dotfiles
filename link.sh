@@ -3,12 +3,33 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 #vim
 if [ ! -f ~/.vimrc ]; then
-  echo "Vim may not be installed/set up correctly"
-  exit 0
+  echo "Vim may not be installed/set up correctly."
+  echo "Creating a ~/.vimrc file"
+  touch ~./vimrc
+fi
+
+if [ ! -f ~/.vim/plugins.vim ]; then
+  echo "Vim may not be installed/set up correctly. Trying to create a plugins.vim file"
+  if [ ! -d ~/.vim/ ]; then
+    echo "Creating a .vim directory"
+    mkdir -p ~/.vim/
+  fi
+  echo "Creating a ~/.vim/plugins.vim file"
+  touch  ~./.vim/plugins.vim
 fi
 
 ln -sf $SCRIPT_DIR/.vimrc ~/.vimrc
 ln -sf $SCRIPT_DIR/plugins.vim ~/.vim/plugins.vim
+
+#tmux
+if [ ! -f ~/.tmux.conf ]; then
+  echo "tmux may not be installed/set up correctly"
+  exit 0
+fi
+
+ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
+ln -sf $SCRIPT_DIR/plugins.vim ~/.vim/plugins.vim
+
 
 #zsh
 if [ ! -f ~/.zshrc ]; then
