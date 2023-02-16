@@ -6,6 +6,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
   git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+  git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/plugins/autoupdate
 fi
 
 # Automatically update oh-my-zsh
@@ -135,7 +136,7 @@ function fourgrid(){
 }
 
 # Map GCC to the version installed by Homebrew on macOS
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'x86_64' ]]; then
 print -v version /usr/local/opt/gcc@<->(n[-1])
 version=${version#*@}
 for file in /usr/local/opt/gcc@${version}/bin/*-${version}(*); do
@@ -152,16 +153,13 @@ fi
 # NVHPC
 NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
 NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
-MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/compilers/man"; export MANPATH
-PATH="$NVCOMPILERS/$NVARCH/22.9/compilers/bin:$PATH"; export PATH
+MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/compilers/man"; export MANPATH
+PATH="$NVCOMPILERS/$NVARCH/23.1/compilers/bin:$PATH"; export PATH
 
 # MPI
-export PATH="$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/bin:$PATH"
-export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/man"
+export PATH="$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/bin:$PATH"
+export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/man"
 
-# Fix GCC linking on M1
-# if [[ $(uname -m) == 'x86_64' ]]; then
-#   print -v version /usr/local/opt/gcc@<->(n[-1])
-# else
-#   print -v version /opt/homebrew/bin/gcc@<->(n[-1])
-# fi
+# Map GCC to the version installed by Homebrew on macOS
+if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'arm64' ]]; then
+fi
