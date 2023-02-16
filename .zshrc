@@ -89,6 +89,7 @@ autoload mkrep
 autoload horgrid
 autoload vergrid
 autoload fourgrid
+autoload mkd
 
 # Load .zshrc specific to OS
 source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"
