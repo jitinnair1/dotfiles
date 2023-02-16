@@ -1,3 +1,8 @@
+# Map gmake to make
+if [[ "$OSTYPE" == "darwin"* ]]; then
+export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+fi
+
 # Map GCC to the version installed by Homebrew on macOS for x86_64
 if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'x86_64' ]]; then
 print -v version /usr/local/opt/gcc@<->(n[-1])
