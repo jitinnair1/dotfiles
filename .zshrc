@@ -43,6 +43,7 @@ export ZSH=$HOME/.oh-my-zsh
   copypath
   copyfile
   debian
+  git
   autoupdate
   zsh-fzf-history-search
   zsh-z
