@@ -152,12 +152,12 @@ fi
 # NVHPC
 NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
 NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
-MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/compilers/man"; export MANPATH
-PATH="$NVCOMPILERS/$NVARCH/22.9/compilers/bin:$PATH"; export PATH
+MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/compilers/man"; export MANPATH
+PATH="$NVCOMPILERS/$NVARCH/23.1/compilers/bin:$PATH"; export PATH
 
 # MPI
-export PATH="$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/bin:$PATH"
-export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/22.9/comm_libs/mpi/man"
+export PATH="$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/bin:$PATH"
+export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.1/comm_libs/mpi/man"
 
 # Fix GCC linking on M1
 # if [[ $(uname -m) == 'x86_64' ]]; then
