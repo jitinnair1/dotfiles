@@ -79,6 +79,13 @@ eval $(thefuck --alias)
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# exa
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
+
+
 # autoload zsh functions
 fpath+=~/GitHub/dotfiles/zshfunctions
 
