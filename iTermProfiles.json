@@ -1,7 +1,11 @@
 {
 "Profiles": [
 {
-  "ASCII Ligatures" : true,
+  "Ansi 5 Color" : {
+    "Green Component" : 0.4509804,
+    "Red Component" : 1,
+    "Blue Component" : 0.99215690000000001
+  },
   "Working Directory" : "\/Users\/jitinnair",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -380,17 +384,17 @@
   "Name" : "Default",
   "Blinking Cursor" : true,
   "Guid" : "3EA368D1-42E9-4F79-A06D-B96BDA4393D2",
-  "Ansi 8 Color" : {
-    "Green Component" : 0.4862745,
-    "Red Component" : 0.4862745,
-    "Blue Component" : 0.4862745
-  },
+  "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Green Component" : 1,
     "Red Component" : 0.80941479999999999,
     "Blue Component" : 0.67277030000000004
   },
-  "Idle Code" : 0,
+  "Ansi 8 Color" : {
+    "Green Component" : 0.4862745,
+    "Red Component" : 0.4862745,
+    "Blue Component" : 0.4862745
+  },
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -433,7 +437,7 @@
     "Red Component" : 0.77647060000000001,
     "Blue Component" : 0.99607840000000003
   },
-  "Transparency" : 0.07882495241116752,
+  "Transparency" : 0.16944813829787234,
   "HotKey Activated By Modifier" : false,
   "Background Color" : {
     "Green Component" : 0,
@@ -454,20 +458,12 @@
   ],
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
-  "Custom Directory" : "No",
-  "Ansi 5 Color" : {
-    "Green Component" : 0.4509804,
-    "Red Component" : 1,
-    "Blue Component" : 0.99215690000000001
-  },
-  "Thin Strokes" : 4
+  "ASCII Ligatures" : true,
+  "Thin Strokes" : 4,
+  "Custom Directory" : "No"
 },
 {
-  "Ansi 5 Color" : {
-    "Green Component" : 0.4509804,
-    "Red Component" : 1,
-    "Blue Component" : 0.99215690000000001
-  },
+  "Thin Strokes" : 4,
   "Working Directory" : "\/Users\/jitinnair",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -525,7 +521,7 @@
       "algorithm" : 0
     }
   },
-  "Hide After Opening" : true,
+  "Hide After Opening" : false,
   "Flashing Bell" : false,
   "Cursor Guide Color" : {
     "Red Component" : 0.70213186740875244,
@@ -835,7 +831,7 @@
     "Blue Component" : 0.9982605
   },
   "Window Type" : 2,
-  "Use Bright Bold" : false,
+  "Use Bright Bold" : true,
   "Has Hotkey" : true,
   "HotKey Modifier Activation" : 0,
   "Cursor Text Color" : {
@@ -916,7 +912,7 @@
     "Blue Component" : 0.99607840000000003
   },
   "HotKey Activated By Modifier" : false,
-  "Transparency" : 0.17144471763959393,
+  "Transparency" : 0.16735372340425531,
   "Background Color" : {
     "Green Component" : 0,
     "Red Component" : 0,
@@ -940,9 +936,13 @@
   ],
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
+  "ASCII Ligatures" : true,
   "Custom Directory" : "No",
-  "Thin Strokes" : 4,
-  "ASCII Ligatures" : true
+  "Ansi 5 Color" : {
+    "Green Component" : 0.4509804,
+    "Red Component" : 1,
+    "Blue Component" : 0.99215690000000001
+  }
 }
 ]
 }
