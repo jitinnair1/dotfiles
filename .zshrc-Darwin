@@ -16,3 +16,9 @@ fi
 # Map GCC to the version installed by Homebrew on macOS for arm
 if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'arm64' ]]; then
 fi
+
+#Ruby on macOS
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+ export PATH=/usr/local/opt/ruby/bin:$PATH
+ export PATH=`gem environment gemdir`/bin:$PATH
+fi
