@@ -36,12 +36,13 @@ ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
 #zsh
 if [ ! -f ~/.zshrc ]; then
   echo "ZSH may not be installed/set up correctly"
-  exit 0
+  echo "Creating ~.zshrc now"
+  touch ~/.zshrc
+  echo "Created ~/.zshrc"
 fi
 
 if [ ! -d ~/.oh-my-zsh ]; then
-  echo "oh-my-zsh may not be installed/set up correctly"
-  exit 0
+  echo "oh-my-zsh may not be installed/set up correctly. Installation will be attempted on sourcing ~/.zshrc"
 fi
 
 ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
@@ -54,6 +55,20 @@ ln -sf $SCRIPT_DIR/.leptonrc ~/.leptonrc
 
 #powerlevel10k
 ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
+
+#iterm
+if [ ! -d '/Applications/iTerm.app' -a ! -d "$HOME/Applications/iTerm.app" ]
+then
+  echo 'iTerm is not installed'
+else
+  # Specify the preferences directory
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/GitHub/dotfiles/"
+  
+  # Tell iTerm2 to use the custom preferences in the directory
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+  echo "iTerm Settings loaded from dotfiles repo"
+fi
 
 #custom functions
 #sudo ln -sf $SCRIPT_DIR/functions/vtk2png.py /usr/local/bin/vtk2png.py
