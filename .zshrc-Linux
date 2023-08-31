@@ -7,3 +7,7 @@ PATH="$NVCOMPILERS/$NVARCH/23.7/compilers/bin:$PATH"; export PATH
 # MPI
 export PATH="$NVCOMPILERS/$NVARCH/23.7/comm_libs/mpi/bin:$PATH"
 export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.7/comm_libs/mpi/man"
+
+#Ruby
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
