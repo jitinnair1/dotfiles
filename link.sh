@@ -72,7 +72,5 @@ else
 fi
 
 #fyodor
-ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
-
-
+#ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
 
