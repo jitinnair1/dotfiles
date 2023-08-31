@@ -71,3 +71,8 @@ else
   echo "iTerm Settings loaded from dotfiles repo"
 fi
 
+#fyodor
+ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
+
+
+
