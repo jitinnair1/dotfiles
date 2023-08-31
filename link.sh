@@ -29,13 +29,14 @@ fi
 
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  echo "tpm installed"
 fi
 
-ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
+ln -sf $SCRIPT_DIR/config/.tmux.conf ~/.tmux.conf
 
 #zsh
 if [ ! -f ~/.zshrc ]; then
-  echo "ZSH may not be installed/set up correctly"
+  echo "zsh may not be installed/set up correctly"
   echo "Creating ~.zshrc now"
   touch ~/.zshrc
   echo "Created ~/.zshrc"
@@ -51,10 +52,10 @@ ln -sf $SCRIPT_DIR/.zshrc-Linux ~/.zshrc-Linux
 
 
 #lepton
-ln -sf $SCRIPT_DIR/.leptonrc ~/.leptonrc
+ln -sf $SCRIPT_DIR/config/.leptonrc ~/.leptonrc
 
 #powerlevel10k
-ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
+ln -sf $SCRIPT_DIR/config/.p10k.zsh ~/.p10k.zsh
 
 #iterm
 if [ ! -d '/Applications/iTerm.app' -a ! -d "$HOME/Applications/iTerm.app" ]
@@ -62,7 +63,7 @@ then
   echo 'iTerm is not installed'
 else
   # Specify the preferences directory
-  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/GitHub/dotfiles/"
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/GitHub/dotfiles/config/"
   
   # Tell iTerm2 to use the custom preferences in the directory
   defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
@@ -70,9 +71,3 @@ else
   echo "iTerm Settings loaded from dotfiles repo"
 fi
 
-#custom functions
-#sudo ln -sf $SCRIPT_DIR/functions/vtk2png.py /usr/local/bin/vtk2png.py
-#sudo ln -sf $SCRIPT_DIR/functions/vtk2pngTernTwoPhase.py /usr/local/bin/vtk2pngTernTwoPhase.py
-#sudo ln -sf $SCRIPT_DIR/functions/vtk2pngTernThreePhase.py /usr/local/bin/vtk2pngTernThreePhase.py
-#sudo ln -sf $SCRIPT_DIR/functions/vtk2pngTernTwoPhaseClipped.py /usr/local/bin/vtk2pngTernTwoPhaseClipped.py
-#sudo ln -sf $SCRIPT_DIR/functions/vtk2pngTernThreePhaseClipped.py /usr/local/bin/vtk2pngTernThreePhaseClipped.py
