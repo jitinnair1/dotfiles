@@ -1,0 +1,18 @@
+<%# Fyodor's default template modified for YAML -%>
+---
+title: "<%= @book.title %>"
+---
+
+Author: <%= @book.author.empty? ? SINGULAR[:AUTHOR_NA] : @book.author %>
+
+<% if regular_entries.size > 0 -%>
+
+<% for entry in regular_entries -%>
+
+<% if entry.type != Entry::TYPE[:note] -%>
+- <%= entry.text %>
+<% end -%>
+
+<% end -%>
+
+<% end -%>
