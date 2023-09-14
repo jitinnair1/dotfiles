@@ -1,0 +1,9 @@
+function get_ip() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+  fi
+
+  if [[ "$OSTYPE" == "linux"* ]]; then
+    ip address show | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+  fi
+}

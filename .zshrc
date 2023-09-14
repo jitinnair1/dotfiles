@@ -91,15 +91,7 @@ fi
 
 # autoload zsh functions
 fpath+=~/GitHub/dotfiles/zshfunctions
-
-# zsh functions
-autoload make_gif
-autoload mdpdf
-autoload mkrep
-autoload horgrid
-autoload vergrid
-autoload fourgrid
-autoload mkd
+autoload -Uz ~/GitHub/dotfiles/zshfunctions/**/*
 
 # Load .zshrc specific to OS
 source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"
