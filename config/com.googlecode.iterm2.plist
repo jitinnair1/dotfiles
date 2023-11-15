@@ -14,6 +14,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DoubleReportScrollWheel</key>
+	<false/>
 	<key>HTMLTabTitles</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
@@ -1752,6 +1754,8 @@
 	<false/>
 	<key>WindowNumber</key>
 	<true/>
+	<key>WordCharacters</key>
+	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 </dict>
