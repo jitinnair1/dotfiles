@@ -82,10 +82,10 @@ eval $(thefuck --alias)
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# exa
+# eza
 if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --all --group"
+    alias ls="eza"
+    alias la="eza --long --all --group"
 fi
 
 
