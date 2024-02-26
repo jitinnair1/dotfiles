@@ -15,6 +15,12 @@ fi
 
 # Map GCC to the version installed by Homebrew on macOS for arm
 if [[ "$OSTYPE" == "darwin"* && $(uname -m) == 'arm64' ]]; then
+  print -v version /opt/homebrew/opt/gcc@<->(n[-1])
+  version=${version#*@}
+  for file in /opt/homebrew/opt/gcc@${version}/bin/*-${version}(*); do
+    tail=${file:t}
+    ln -sf ${file} /opt/homebrew/bin/${tail%-*}
+  done
 fi
 
 #Ruby on macOS
