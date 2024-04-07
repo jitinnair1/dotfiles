@@ -18,7 +18,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
-" turn on syntax highlighting
+" Turn on syntax highlighting
 syntax on
 
 " This makes vim act like all other editors, buffers can
@@ -53,7 +53,7 @@ let g:lightline = {
       \ },
       \ }
 
-" to get rid of thing like --INSERT--
+" To get rid of thing like --INSERT--
 set noshowmode
 
 " To get rid of display of last command
@@ -62,3 +62,5 @@ set noshowcmd
 " To get rid of the file name displayed in the command line bar
 set shortmess+=F 
 
+" To setup fzf in vim
+set rtp+=/opt/homebrew/opt/fzf
