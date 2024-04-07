@@ -66,6 +66,8 @@ export PATH=$GOPATH/bin:$PATH
 
 # Aliases
 alias zc="vi ~/.zshrc"
+alias zl="vi ~/.zshrc-Linux"
+alias zm="vi ~/.zshrc-Darwin"
 alias zs="source ~/.zshrc"
 alias vc="vi ~/.vimrc"
 alias cl="clear"
