@@ -8,6 +8,9 @@ PATH="$NVCOMPILERS/$NVARCH/23.11/compilers/bin:$PATH"; export PATH
 export PATH="$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/bin:$PATH"
 export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man"
 
-#Ruby
+# Ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+
+# Zoxide etc.
+export PATH="$HOME/.local/bin:$PATH"
