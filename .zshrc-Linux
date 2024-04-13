@@ -12,8 +12,10 @@ export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man"
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
-# Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ $(hostname) != "ubuntu" ]; then
+  # Homebrew
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Zoxide etc.
 export PATH="$HOME/.local/bin:$PATH"
