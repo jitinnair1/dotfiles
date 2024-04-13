@@ -14,3 +14,5 @@ export PATH="$HOME/gems/bin:$PATH"
 
 # Zoxide etc.
 export PATH="$HOME/.local/bin:$PATH"
+# zoxide
+eval "$(zoxide init zsh)"
