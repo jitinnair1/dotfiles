@@ -15,5 +15,8 @@ export PATH="$HOME/gems/bin:$PATH"
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Zoxide etc.
+export PATH="$HOME/.local/bin:$PATH"
+
 # zoxide
 eval "$(zoxide init zsh)"
