@@ -17,6 +17,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set mouse=a                     "Enables mouse in all modes, enable mouse scroll within tmux
 
 " Turn on syntax highlighting
 syntax on
