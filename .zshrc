@@ -69,6 +69,7 @@ alias cl="clear"
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias f="fuck"
+alias lsz="eza -l --total-size -s=size -r --no-user --no-permissions"
 
 # thefuck config
 eval $(thefuck --alias)
