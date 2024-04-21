@@ -8,6 +8,10 @@ PATH="$NVCOMPILERS/$NVARCH/23.11/compilers/bin:$PATH"; export PATH
 export PATH="$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/bin:$PATH"
 export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man"
 
+# CUDA Lib Path
+export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/../math_libs/lib64:$LD_LIBRARY_PATH
+
 # Ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
