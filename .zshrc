@@ -48,6 +48,7 @@ export ZSH=$HOME/.oh-my-zsh
   zsh-fzf-history-search
   zsh-autosuggestions
   zsh-syntax-highlighting
+  vi-mode
 )
 
 # Disable bracketed-magic-paste to fix slow paste
