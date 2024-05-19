@@ -8,9 +8,19 @@ PATH="$NVCOMPILERS/$NVARCH/23.11/compilers/bin:$PATH"; export PATH
 export PATH="$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/bin:$PATH"
 export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man"
 
-# CUDA Lib Path
-export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/lib64:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/../math_libs/lib64:$LD_LIBRARY_PATH
+# Set LD_LIBRARY_PATH based on hostname
+if [[ $(hostname) == "hilliard" ]]; then
+    # CUDA Lib Path (Hilliard)
+    export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/../math_libs/lib64:$LD_LIBRARY_PATH
+fi
+
+if [[ $(hostname) == "ubuntu" ]]; then
+    # Custom Lib and Include Path (gpucluster)
+    export LD_LIBRARY_PATH=/home/jitin/lib:$LD_LIBRARY_PATH
+    export CPATH=/home/jitin/include:$CPATH
+
+fi
 
 # Ruby
 export GEM_HOME="$HOME/gems"
