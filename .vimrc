@@ -9,12 +9,11 @@ so ~/.vim/plugins.vim
 
 " ================ General Config ====================
 
-set relativenumber              "Line numbers are good, relative line numbers are better
+set relativenumber              "Line numbers good, relative line numbers better
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set mouse=a                     "Enable mouse scroll and commit blasphemy
