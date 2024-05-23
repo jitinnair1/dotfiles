@@ -69,7 +69,6 @@ alias cl="clear"
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias f="fuck"
-alias lsz="eza -l --total-size -s=size -r --no-user --no-permissions"
 
 # thefuck config
 eval $(thefuck --alias)
@@ -81,11 +80,11 @@ eval $(thefuck --alias)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # eza
-if [ -x "$(command -v exa)" ]; then
+if [ -x "$(command -v eza)" ]; then
     alias ls="eza"
     alias la="eza --long --all --group"
+    alias lsz="eza -l --total-size -s=size -r --no-user --no-permissions"
 fi
-
 
 # autoload zsh functions
 fpath+=~/GitHub/dotfiles/zshfunctions
