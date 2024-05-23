@@ -6,10 +6,11 @@ PATH="$NVCOMPILERS/$NVARCH/23.11/compilers/bin:$PATH"; export PATH
 
 # MPI
 export PATH="$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/bin:$PATH"
-export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man"
+export PATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/hpcx:$PATH"
+export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/23.11/comm_libs/mpi/man:$MANPATH"
 
 # Set LD_LIBRARY_PATH based on hostname
-if [[ $(hostname) == "hilliard" ]]; then
+if [[ $(hostname) == "hilliard-taa-lab" ]]; then
     # CUDA Lib Path (Hilliard)
     export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/lib64:$LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/../math_libs/lib64:$LD_LIBRARY_PATH
@@ -25,11 +26,6 @@ fi
 # Ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-
-if [ $(hostname) != "ubuntu" ]; then
-  # Homebrew
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
 
 # Zoxide etc.
 export PATH="$HOME/.local/bin:$PATH"
