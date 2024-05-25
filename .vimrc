@@ -19,6 +19,7 @@ set autoread                    "Reload files changed outside vim
 set mouse=a                     "Enable mouse scroll and commit blasphemy
 set incsearch                   "Highlight as you type
 set hlsearch                    "Highlight items found
+set termguicolors               "Set colours for theme
 
 " Turn on syntax highlighting
 syntax on
@@ -45,7 +46,7 @@ nnoremap P P=`]<C-o>
 " For lightline
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'catppuccin_mocha', 
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
