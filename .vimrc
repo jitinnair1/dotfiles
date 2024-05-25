@@ -17,6 +17,8 @@ set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set mouse=a                     "Enable mouse scroll and commit blasphemy
+set incsearch                   "Highlight as you type
+set hlsearch                    "Highlight items found
 
 " Turn on syntax highlighting
 syntax on
