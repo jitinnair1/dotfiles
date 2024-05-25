@@ -65,6 +65,7 @@ alias zl="vi ~/.zshrc-Linux"
 alias zm="vi ~/.zshrc-Darwin"
 alias zs="source ~/.zshrc"
 alias vc="vi ~/.vimrc"
+alias vp="vi ~/.vim/plugins.vim"
 alias cl="clear"
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
