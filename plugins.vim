@@ -8,6 +8,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'wakatime/vim-wakatime'
+Plug 'romainl/vim-cool'
+Plug 'dense-analysis/ale'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Initialize plugin system
 call plug#end()
