@@ -85,8 +85,8 @@ if [ -x "$(command -v eza)" ]; then
     alias ls="eza"
     alias la="eza --long --all --group"
     alias lsz="eza -l --total-size -s=size -r --no-user --no-permissions"
-    alias lsn="eza -l --total-size -s=name -r --no-user --no-permissions"
     alias lsr="eza -l --total-size -s=time -r --no-user --no-permissions"
+    alias lsn="eza -l --total-size -s=name --no-user --no-permissions"
 fi
 
 # autoload zsh functions
