@@ -11,6 +11,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'romainl/vim-cool'
 Plug 'dense-analysis/ale'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Initialize plugin system
 call plug#end()
