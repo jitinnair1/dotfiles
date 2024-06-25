@@ -47,6 +47,8 @@ set expandtab
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
+" ================ Others ===========================
+
 " For lightline
 set laststatus=2
 let g:lightline = {
@@ -71,3 +73,10 @@ set shortmess+=F
 
 " To setup fzf in vim
 set rtp+=/opt/homebrew/opt/fzf
+
+" Easily toggle NERDTree on/off
+noremap <F10> :NERDTreeToggle<CR>
+
+" Easily toggle Markdown Preview
+nmap <F6> <Plug>MarkdownPreviewToggle<CR>
+
