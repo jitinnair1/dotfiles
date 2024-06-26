@@ -80,3 +80,12 @@ noremap <F10> :NERDTreeToggle<CR>
 " Easily toggle Markdown Preview
 nmap <F6> <Plug>MarkdownPreviewToggle<CR>
 
+" Persistent undo
+if !isdirectory("$HOME/.vim/undo")
+    call mkdir("$HOME/.vim/undo", "p")
+endif
+
+set undofile                      " Enable persistent undo
+set undodir=$HOME/.vim/undo       " Directory to store undo files
+set undolevels=1000               " How many undos
+set undoreload=10000              " Number of lines to save for undo
