@@ -27,6 +27,9 @@ fi
 HISTSIZE=5000
 SAVEHIST=5000
 
+# Fix vim colours within tmux
+export TERM='xterm-256color'
+
 # Set name of the theme to load
 ZSH_THEME=powerlevel10k/powerlevel10k
 

@@ -24,6 +24,7 @@ set mouse=a                     "Enable mouse scroll and commit blasphemy
 set incsearch                   "Highlight as you type
 set hlsearch                    "Highlight items found, NOTE: vim-cool plugin automatically removes highlights post search
 set termguicolors               "Set colours for theme
+set background=dark             "Fix vim colours within tmux
 
 " Turn on syntax highlighting
 syntax on
