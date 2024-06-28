@@ -58,10 +58,10 @@ let g:airline_section_z = '%p%% %l:%c'
 set noshowmode
 
 " To get rid of display of last command
-set noshowcmd 
+set noshowcmd
 
 " To get rid of the file name displayed in the command line bar
-set shortmess+=F 
+set shortmess+=F
 
 " To setup fzf in vim
 set rtp+=/opt/homebrew/opt/fzf
