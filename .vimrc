@@ -66,6 +66,11 @@ set shortmess+=F
 " To setup fzf in vim
 set rtp+=/opt/homebrew/opt/fzf
 
+" Define keybindings for fzf
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-f> :Files<CR>
+
 " Easily toggle NERDTree on/off
 noremap <F10> :NERDTreeToggle<CR>
 
