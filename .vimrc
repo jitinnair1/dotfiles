@@ -54,6 +54,9 @@ nnoremap P P=`]<C-o>
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%p%% %l:%c'
 
+" Fail-safe for vim-airline symbols incase locale is not set (eg. on remote)
+set encoding=utf-8
+
 " To get rid of thing like --INSERT--
 set noshowmode
 
