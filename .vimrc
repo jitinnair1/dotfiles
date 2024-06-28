@@ -50,18 +50,9 @@ nnoremap P P=`]<C-o>
 
 " ================ Others ===========================
 
-" For lightline
-set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'catppuccin_mocha', 
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+" Vim-airline config
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = '%p%% %l:%c'
 
 " To get rid of thing like --INSERT--
 set noshowmode

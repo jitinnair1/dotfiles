@@ -2,10 +2,12 @@
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation for plugin
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'wakatime/vim-wakatime'
 Plug 'romainl/vim-cool'
