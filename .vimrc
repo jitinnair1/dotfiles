@@ -95,3 +95,10 @@ set undofile                      " Enable persistent undo
 set undodir="$HOME/.vim/undo"     " Directory to store undo files
 set undolevels=1000               " How many undos
 set undoreload=10000              " Number of lines to save for undo
+
+" Autosave
+augroup autosave
+    autocmd!
+    autocmd BufRead * if &filetype == "" | setlocal ft=text | endif
+    autocmd FileType * autocmd TextChanged,InsertLeave <buffer> if &readonly == 0 | silent write | endif
+augroup END
