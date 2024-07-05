@@ -86,12 +86,17 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Easily toggle Markdown Preview
 nmap <F6> <Plug>MarkdownPreviewToggle<CR>
 
-" Persistent undo
-if !isdirectory(expand("$HOME/.vim/undo"))
-    call mkdir(expand("$HOME/.vim/undo"), "p")
+"" Persistent undo
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
 endif
 
-set undofile                      " Enable persistent undo
-set undodir="$HOME/.vim/undo"     " Directory to store undo files
-set undolevels=1000               " How many undos
-set undoreload=10000              " Number of lines to save for undo
