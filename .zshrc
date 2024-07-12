@@ -1,11 +1,11 @@
 # First Run Checks
-if [ ! -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
-  git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/autoupdate
+if [[ ! -d ~/.oh-my-zsh ]]; then
+  sh -c '$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)' --unattended
+  git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+  git clone 'https://github.com/zsh-users/zsh-autosuggestions' "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+  git clone 'https://github.com/zsh-users/zsh-syntax-highlighting.git' "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+  git clone 'https://github.com/joshskidmore/zsh-fzf-history-search' "${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search"
+  git clone 'https://github.com/TamCore/autoupdate-oh-my-zsh-plugins' "${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/autoupdate"
 fi
 
 # Automatically update oh-my-zsh
@@ -31,10 +31,10 @@ SAVEHIST=5000
 export TERM='xterm-256color'
 
 # Set name of the theme to load
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -63,18 +63,18 @@ export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 
 # Aliases
-alias zc="vi ~/.zshrc"
-alias zl="vi ~/.zshrc-Linux"
-alias zm="vi ~/.zshrc-Darwin"
-alias zs="source ~/.zshrc"
-alias vc="vi ~/.vimrc"
-alias vp="vi ~/.vim/plugins.vim"
-alias tx="vi ~/.tmux.conf"
-alias cl="clear"
-alias untar="tar -zxvf"
-alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-alias f="fuck"
-alias lg="lazygit"
+alias zc='vi ~/.zshrc'
+alias zl='vi ~/.zshrc-Linux'
+alias zm='vi ~/.zshrc-Darwin'
+alias zs='source ~/.zshrc'
+alias vc='vi ~/.vimrc'
+alias vp='vi ~/.vim/plugins.vim'
+alias tx='vi ~/.tmux.conf'
+alias cl='clear'
+alias untar='tar -zxvf'
+alias p10k_upgrade='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'
+alias f='fuck'
+alias lg='lazygit'
 
 # thefuck config
 eval $(thefuck --alias)
@@ -83,15 +83,15 @@ eval $(thefuck --alias)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf config
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # eza
-if [ -x "$(command -v eza)" ]; then
-    alias ls="eza"
-    alias la="eza --long --all --group"
-    alias lsz="eza -l --total-size -s=size -r --no-user --no-permissions"
-    alias lsr="eza -l --total-size -s=time -r --no-user --no-permissions"
-    alias lsn="eza -l --total-size -s=name --no-user --no-permissions"
+if [[ -x '$(command -v eza)' ]]; then
+    alias ls='eza'
+    alias la='eza --long --all --group'
+    alias lsz='eza -l --total-size -s=size -r --no-user --no-permissions'
+    alias lsr='eza -l --total-size -s=time -r --no-user --no-permissions'
+    alias lsn='eza -l --total-size -s=name --no-user --no-permissions'
 fi
 
 # autoload zsh functions
@@ -99,4 +99,4 @@ fpath+=~/GitHub/dotfiles/zshfunctions
 autoload -Uz ~/GitHub/dotfiles/zshfunctions/**/*
 
 # Load .zshrc specific to OS
-source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"
+source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
