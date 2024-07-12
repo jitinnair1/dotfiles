@@ -11,7 +11,7 @@ fi
 # Automatically update oh-my-zsh
 zstyle ':omz:update' mode auto
 
-# Console initialisation code to be run before p10k prompt 
+# Console initialisation code to be run before p10k prompt
 plugins=(
   ssh-agent
 )
@@ -71,9 +71,10 @@ alias vc="vi ~/.vimrc"
 alias vp="vi ~/.vim/plugins.vim"
 alias tx="vi ~/.tmux.conf"
 alias cl="clear"
-alias untar='tar -zxvf'
+alias untar="tar -zxvf"
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias f="fuck"
+alias lg="lazygit"
 
 # thefuck config
 eval $(thefuck --alias)
