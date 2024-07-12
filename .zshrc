@@ -72,7 +72,7 @@ alias vp='vi ~/.vim/plugins.vim'
 alias tx='vi ~/.tmux.conf'
 alias cl='clear'
 alias untar='tar -zxvf'
-alias p10k_upgrade='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'
+alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias f='fuck'
 alias lg='lazygit'
 
