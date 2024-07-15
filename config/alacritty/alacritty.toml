@@ -1,0 +1,36 @@
+# Set Theme
+import = [
+  "~/.config/alacritty/themes/nord.toml",
+]
+
+live_config_reload = true
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dimensions = {lines = 30, columns = 500}
+position = { x = 0, y = 0 }
+decorations = "Buttonless"
+opacity = 0.9
+dynamic_title = true
+padding = { x = 5, y = 5 }
