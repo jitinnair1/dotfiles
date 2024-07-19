@@ -101,6 +101,9 @@ if has("persistent_undo")
     set undofile
 endif
 
+"" Toggle Undotree
+nnoremap <F5> :UndotreeToggle<CR>
+
 "" Autosave
 "augroup autosave
 "    autocmd!

@@ -15,6 +15,7 @@ Plug 'dense-analysis/ale'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'farmergreg/vim-lastplace'
+Plug 'mbbill/undotree'
 
 " Initialize plugin system
 call plug#end()
