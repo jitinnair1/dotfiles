@@ -53,6 +53,7 @@ nnoremap P P=`]<C-o>
 " Vim-airline config
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%p%% %l:%c'
+let g:airline#extensions#ale#enabled = 1
 
 " Fail-safe for vim-airline symbols incase locale is not set (eg. on remote)
 set encoding=utf-8
