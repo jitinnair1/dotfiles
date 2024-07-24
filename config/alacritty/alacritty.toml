@@ -34,3 +34,6 @@ decorations = "Buttonless"
 opacity = 0.9
 dynamic_title = true
 padding = { x = 5, y = 5 }
+
+[selection]
+save_to_clipboard = true
