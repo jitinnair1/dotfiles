@@ -71,6 +71,12 @@ else
   echo "iTerm Settings loaded from dotfiles repo"
 fi
 
+#Alacritty
+if [ ! -d '~/.config/alacritty' ]
+then
+  cp -r $SCRIPT_DIR/config/alarcritty ~/.config
+fi
+
 #fyodor
 #ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
 
