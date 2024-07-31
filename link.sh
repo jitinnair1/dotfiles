@@ -74,7 +74,7 @@ fi
 #Alacritty
 if [ ! -d '~/.config/alacritty' ]
 then
-  cp -r $SCRIPT_DIR/config/alarcritty ~/.config
+  cp -r $SCRIPT_DIR/config/alacritty ~/.config
 fi
 
 #fyodor
