@@ -77,6 +77,9 @@ then
   cp -r $SCRIPT_DIR/config/alacritty ~/.config
 fi
 
+#Zed
+ln -sf $SCRIPT_DIR/config/zed.json ~/.config/zed/settings.json
+
 #fyodor
 #ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
 
