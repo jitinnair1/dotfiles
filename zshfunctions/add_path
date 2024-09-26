@@ -1,0 +1,7 @@
+function add_path() {
+  if [ -z "$1" ]; then
+    export PATH=$PATH:$(pwd)
+  else
+    export PATH=$PATH:$1
+  fi
+}
