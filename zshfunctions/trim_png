@@ -1,0 +1,3 @@
+function trim_png(){
+  magick $1 -trim +repage $1
+}
