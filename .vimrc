@@ -103,10 +103,3 @@ endif
 
 "" Toggle Undotree
 nnoremap <F5> :UndotreeToggle<CR>
-
-"" Autosave
-"augroup autosave
-"    autocmd!
-"    autocmd BufRead * if &filetype == "" | setlocal ft=text | endif
-"    autocmd FileType * autocmd TextChanged,InsertLeave <buffer> if &readonly == 0 | silent write | endif
-"augroup END
