@@ -40,5 +40,8 @@ export LDFLAGS="-L/opt/homebrew/lib:$LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/include:$CPPFLAGS"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib:$LIBRARY_PATH"
 
+# Generated for envman. Added by webi installer for golang
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 # zoxide
 eval "$(zoxide init zsh)"
