@@ -7,22 +7,18 @@ if [ ! -f ~/.config/nvim/init.lua ]; then
   cp -r $SCRIPT_DIR/config/nvim ~/.config/
 fi
 
-
 #vim
 if [ ! -f ~/.vimrc ]; then
   echo "Vim may not be installed/set up correctly."
   echo "Creating a ~/.vimrc file"
-  touch ~./vimrc
+  touch ~/.vimrc
 fi
 
 if [ ! -f ~/.vim/plugins.vim ]; then
   echo "Vim may not be installed/set up correctly. Trying to create a plugins.vim file"
-  if [ ! -d ~/.vim/ ]; then
-    echo "Creating a .vim directory"
-    mkdir -p ~/.vim/
-  fi
+  mkdir -p ~/.vim/
   echo "Creating a ~/.vim/plugins.vim file"
-  touch  ~./.vim/plugins.vim
+  touch ~/.vim/plugins.vim
 fi
 
 ln -sf $SCRIPT_DIR/.vimrc ~/.vimrc
@@ -44,7 +40,7 @@ ln -sf $SCRIPT_DIR/config/.tmux.conf ~/.tmux.conf
 #zsh
 if [ ! -f ~/.zshrc ]; then
   echo "zsh may not be installed/set up correctly"
-  echo "Creating ~.zshrc now"
+  echo "Creating ~/.zshrc now"
   touch ~/.zshrc
   echo "Created ~/.zshrc"
 fi
@@ -63,9 +59,8 @@ ln -sf $SCRIPT_DIR/config/.leptonrc ~/.leptonrc
 #powerlevel10k
 ln -sf $SCRIPT_DIR/config/.p10k.zsh ~/.p10k.zsh
 
-#iterm
-if [ ! -d '/Applications/iTerm.app' -a ! -d "$HOME/Applications/iTerm.app" ]
-then
+#iTerm
+if [ ! -d '/Applications/iTerm.app' ] && [ ! -d "$HOME/Applications/iTerm.app" ]; then
   echo 'iTerm is not installed'
 else
   # Specify the preferences directory
@@ -78,13 +73,13 @@ else
 fi
 
 #Alacritty
-if [ ! -d '~/.config/alacritty' ]
-then
+if [ ! -d "$HOME/.config/alacritty" ]; then
   mkdir -p ~/.config/alacritty
   cp -r $SCRIPT_DIR/config/alacritty ~/.config
 fi
 
-ln -sf $SCRIPT_DIR/config/alacritty/alacritty.toml
+ln -sf $SCRIPT_DIR/config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 #Zed
 ln -sf $SCRIPT_DIR/config/zed.json ~/.config/zed/settings.json
+
