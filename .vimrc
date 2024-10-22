@@ -12,7 +12,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 so ~/.vim/plugins.vim
 
 " ================ General Config ====================
-
+set number                      "Line numbers are good
 set relativenumber              "Line numbers good, relative line numbers better
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
