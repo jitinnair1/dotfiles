@@ -1,6 +1,13 @@
 #!/bin/sh
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
+#nvim
+if [ ! -f ~/.config/nvim/init.lua ]; then
+  echo "Neovim may not be installed/set up correctly"
+  cp -r $SCRIPT_DIR/config/nvim ~/.config/
+fi
+
+
 #vim
 if [ ! -f ~/.vimrc ]; then
   echo "Vim may not be installed/set up correctly."
@@ -50,7 +57,6 @@ ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
 ln -sf $SCRIPT_DIR/.zshrc-Darwin ~/.zshrc-Darwin
 ln -sf $SCRIPT_DIR/.zshrc-Linux ~/.zshrc-Linux
 
-
 #lepton
 ln -sf $SCRIPT_DIR/config/.leptonrc ~/.leptonrc
 
@@ -64,7 +70,7 @@ then
 else
   # Specify the preferences directory
   defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/GitHub/dotfiles/config/"
-  
+
   # Tell iTerm2 to use the custom preferences in the directory
   defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
@@ -74,12 +80,11 @@ fi
 #Alacritty
 if [ ! -d '~/.config/alacritty' ]
 then
+  mkdir -p ~/.config/alacritty
   cp -r $SCRIPT_DIR/config/alacritty ~/.config
 fi
 
+ln -sf $SCRIPT_DIR/config/alacritty/alacritty.toml
+
 #Zed
 ln -sf $SCRIPT_DIR/config/zed.json ~/.config/zed/settings.json
-
-#fyodor
-#ln -sf $SCRIPT_DIR/config/fyodor_template.erb ~/.config/fyodor/template.erb
-
