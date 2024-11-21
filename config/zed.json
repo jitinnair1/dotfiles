@@ -6,17 +6,38 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
+//
+
 {
+  // theme and ui
   "theme": "Catppuccin Macchiato - No Italics",
   "ui_font_size": 16,
-  "vim_mode": true,
   "buffer_font_family": "MesloLGS NF",
   "buffer_font_size": 16,
+  "relative_line_numbers": true,
+  "multi_cursor_modifier": "cmd_or_ctrl",
+
+  // vim
+  "vim_mode": true,
+
+  // lsp etc.
+  "languages": {
+    "C++": {
+      "language_servers": ["clangd"]
+    }
+  },
+
+  // extensions to auto-sync
+  // Note: To sync installed extensions, add the to the list below after installing a new extension.
+  // Get the name of the extension from the extensiosn directory:
+  // On macOS, extensions are installed in ~/Library/Application Support/Zed/extensions.
+  // On Linux, they are installed in either $XDG_DATA_HOME/zed/extensions or ~/.local/share/zed/extensions.
   "auto_install_extensions": {
     "wakatime": true,
     "html": true,
     "catppuccin": true,
     "ruby": true,
-    "scss": true
+    "scss": true,
+    "matlab": true
   }
 }
