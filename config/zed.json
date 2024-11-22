@@ -38,6 +38,7 @@
     "catppuccin": true,
     "ruby": true,
     "scss": true,
-    "matlab": true
+    "matlab": true,
+    "git-firefly": true
   }
 }
