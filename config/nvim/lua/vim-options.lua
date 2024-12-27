@@ -11,7 +11,7 @@ vim.cmd("set noshowcmd")
 vim.cmd("set shortmess+=F")
 
 -- From cpow's template
-vim.g.mapleader = " "
+vim.g.mapleader = "/"
 vim.g.background = "light"
 
 vim.opt.swapfile = false
