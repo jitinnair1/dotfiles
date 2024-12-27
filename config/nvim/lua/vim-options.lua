@@ -10,11 +10,8 @@ vim.cmd("set noshowmode")
 vim.cmd("set noshowcmd")
 vim.cmd("set shortmess+=F")
 
--- From cpow's template
-vim.g.mapleader = "/"
-vim.g.background = "light"
-
-vim.opt.swapfile = false
+-- Map leader to /
+vim.g.mapleader = '/'
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
@@ -22,5 +19,6 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.wo.number = true
+-- Backup
+vim.opt.backup = false
+vim.opt.swapfile = false
