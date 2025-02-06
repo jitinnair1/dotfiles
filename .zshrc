@@ -46,6 +46,7 @@ export ZSH="$HOME/.oh-my-zsh"
   copyfile
   debian
   git
+  nvm
   autoupdate
   vi-mode
   zsh-fzf-history-search
@@ -84,6 +85,10 @@ eval $(thefuck --alias)
 
 # fzf config
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# nvm config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # eza
 if [[ -x "$(command -v eza)" ]]; then
