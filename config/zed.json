@@ -16,6 +16,7 @@
   "buffer_font_size": 16,
   "relative_line_numbers": true,
   "multi_cursor_modifier": "cmd_or_ctrl",
+  "format_on_save": "off",
 
   // vim
   "vim_mode": true,
