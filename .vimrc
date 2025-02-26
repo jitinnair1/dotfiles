@@ -26,6 +26,12 @@ set hlsearch                    "Highlight items found, NOTE: vim-cool plugin au
 set termguicolors               "Set colours for theme
 set background=dark             "Fix vim colours within tmux
 
+" Text-wrap followed by line break at 100 cols
+set textwidth=100
+set wrapmargin=0
+set formatoptions+=t
+set linebreak                   "Breaks by word rather than character
+
 " Turn on syntax highlighting
 syntax on
 
