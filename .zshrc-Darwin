@@ -29,6 +29,11 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
  export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
+# MATLAB Runtime
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Runtime/R2024b/runtime/maca64"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Runtime/R2024b/bin/maca64"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Runtime/R2024b/sys/os/maca64"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Runtime/R2024b/extern/bin/maca64"
 
 #Ruby on macOS arm64
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
