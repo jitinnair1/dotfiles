@@ -80,6 +80,14 @@ fi
 
 ln -sf $SCRIPT_DIR/config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
+#Ghostty
+if [ ! -d "$HOME/.config/ghostty" ]; then
+  mkdir -p ~/.config/ghostty
+  cp -r $SCRIPT_DIR/config/ghostty ~/.config/ghostty
+fi
+
+ln -sf $SCRIPT_DIR/config/ghostty/config ~/.config/ghostty/config
+
 #Zed
 ln -sf $SCRIPT_DIR/config/zed.json ~/.config/zed/settings.json
 
