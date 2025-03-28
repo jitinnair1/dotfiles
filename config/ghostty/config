@@ -59,3 +59,6 @@ window-decoration = none
 
 # Enable Quick Terminal
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Keybind for quit
+keybind = global:ctrl+escape=quit
