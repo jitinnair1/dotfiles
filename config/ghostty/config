@@ -52,8 +52,10 @@
 background-opacity = 0.8
 
 # Fullscreen and start maximised
-fullscreen = true
 maximize = true
 
 # Hide title
 window-decoration = none
+
+# Enable Quick Terminal
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
