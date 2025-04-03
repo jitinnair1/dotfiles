@@ -51,11 +51,8 @@
 # Set Transparency
 background-opacity = 0.8
 
-# Fullscreen and start maximised
+# Start maximised
 maximize = true
-
-# Hide title
-window-decoration = none
 
 # Keybind for quit
 keybind = global:ctrl+escape=quit
