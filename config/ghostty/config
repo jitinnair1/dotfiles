@@ -57,8 +57,11 @@ maximize = true
 # Hide title
 window-decoration = none
 
-# Enable Quick Terminal
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
-
 # Keybind for quit
 keybind = global:ctrl+escape=quit
+
+# Save state for quick terminal
+window-save-state = always
+
+# Quick Terminal on macOS
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
