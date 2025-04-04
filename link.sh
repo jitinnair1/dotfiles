@@ -5,7 +5,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 if [ ! -f ~/.config/nvim/init.lua ]; then
   echo "Neovim may not be installed/set up correctly"
 fi
-ln -sf $SCRIPT_DIR/config/nvim ~/.config/nvim
+ln -sf $SCRIPT_DIR/config/nvim ~/.config/
 
 #vim
 if [ ! -f ~/.vimrc ]; then
