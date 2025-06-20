@@ -110,3 +110,6 @@ endif
 
 "" Toggle Undotree
 nnoremap <F5> :UndotreeToggle<CR>
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
