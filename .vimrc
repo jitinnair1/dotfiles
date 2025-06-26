@@ -94,7 +94,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Easily toggle Markdown Preview
 nmap <F6> <Plug>MarkdownPreviewToggle<CR>
 
-"" Persistent undo
+" Persistent undo
 if has("persistent_undo")
    let target_path = expand('~/.undodir')
 
@@ -108,8 +108,8 @@ if has("persistent_undo")
     set undofile
 endif
 
-"" Toggle Undotree
+" Toggle Undotree
 nnoremap <F5> :UndotreeToggle<CR>
 
-"Remove all trailing whitespace by pressing F5
+" Remove all trailing whitespace by pressing F5
 nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
