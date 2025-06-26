@@ -41,9 +41,12 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH="`gem environment gemdir`/bin:$PATH"
 fi
 
-export LDFLAGS="-L/opt/homebrew/lib:$LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/include:$CPPFLAGS"
-export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib:$LIBRARY_PATH"
+#export LDFLAGS="-L/opt/homebrew/lib:$LDFLAGS"
+#export CPPFLAGS="-I/opt/homebrew/include:$CPPFLAGS"
+#export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib:$LIBRARY_PATH"
+export CPATH="/opt/homebrew/include:$CPATH"
+export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
+
 
 # Generated for envman. Added by webi installer for golang
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
