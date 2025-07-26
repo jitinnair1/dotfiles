@@ -28,11 +28,25 @@ set background=dark             "Fix vim colours within tmux
 set clipboard=unnamedplus       "Because clipboard manager will take care of the mess
 set splitright                  "When spliting, new pane opens right (pun intented)
 
-" Text-wrap followed by line break at 100 cols
-set textwidth=100
-set wrapmargin=0
-set formatoptions+=t
-set linebreak                   "Breaks by word rather than character
+" Text-wrap at 100 cols
+function! ToggleTextWrap()
+    if &textwidth == 100
+        " If textwidth is 100, turn off text wrap settings
+        set textwidth=0
+        set nowrap
+        set wrapmargin=0
+        echo "Text wrap disabled"
+    else
+        " Otherwise, enable text wrap settings
+        set wrap
+        set textwidth=100
+        set wrapmargin=0
+        set formatoptions+=t
+        echo "Text wrap enabled"
+    endif
+endfunction
+
+nnoremap <leader>tw :call ToggleTextWrap()<CR>
 
 " Turn on syntax highlighting
 syntax on
