@@ -20,7 +20,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
-set mouse=a                     "Enable mouse scroll and commit blasphemy
+set mouse=a                     "Enable mouse and commit blasphemy
 set incsearch                   "Highlight as you type
 set hlsearch                    "Highlight items found, NOTE: vim-cool plugin automatically removes highlights post search
 set termguicolors               "Set colours for theme
