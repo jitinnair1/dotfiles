@@ -25,7 +25,6 @@ set incsearch                   "Highlight as you type
 set hlsearch                    "Highlight items found, NOTE: vim-cool plugin automatically removes highlights post search
 set termguicolors               "Set colours for theme
 set background=dark             "Fix vim colours within tmux
-set clipboard=unnamedplus       "Because clipboard manager will take care of the mess
 set splitright                  "When spliting, new pane opens right (pun intented)
 
 " Text-wrap at 100 cols
