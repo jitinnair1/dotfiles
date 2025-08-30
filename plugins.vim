@@ -18,6 +18,7 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+Plug 'vim-pandoc/vim-markdownfootnotes'
 
 " Initialize plugin system
 call plug#end()
