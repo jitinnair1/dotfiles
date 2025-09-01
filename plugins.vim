@@ -11,7 +11,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'wakatime/vim-wakatime'
 Plug 'romainl/vim-cool'
-Plug 'dense-analysis/ale'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'farmergreg/vim-lastplace'
