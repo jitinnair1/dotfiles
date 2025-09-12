@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BACKUP_FILE="$(hostname)_symlinks.txt"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BACKUP_FILE="$SCRIPT_DIR/$(hostname)_symlinks.txt"
 DRY_RUN=0
 
 if [[ "$1" == "--no" ]]; then
