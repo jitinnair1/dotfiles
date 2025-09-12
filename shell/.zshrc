@@ -101,8 +101,8 @@ if [[ -x "$(command -v eza)" ]]; then
 fi
 
 # autoload zsh functions
-fpath+=~/GitHub/dotfiles/zshfunctions
-autoload -Uz ~/GitHub/dotfiles/zshfunctions/**/*
+fpath+=~/GitHub/dotfiles/shell/zshfunctions
+autoload -Uz ~/GitHub/dotfiles/shell/zshfunctions/**/*
 
 # Load .zshrc specific to OS
 source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
