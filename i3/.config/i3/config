@@ -51,7 +51,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+w kill
 
 # start rofi:
 bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
