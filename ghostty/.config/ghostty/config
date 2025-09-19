@@ -55,7 +55,7 @@ background-opacity = 0.8
 maximize = true
 
 # No titlebar
-window-decoration = none
+window-decoration = client
 
 # Keybind for quit
 keybind = global:ctrl+escape=quit
