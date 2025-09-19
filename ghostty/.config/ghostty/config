@@ -65,3 +65,6 @@ window-save-state = always
 
 # Quick Terminal on macOS
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Don't ask before closing
+confirm-close-surface= false
