@@ -15,6 +15,9 @@ font pango:JetBrains Mono 10
 bindsym Control+$mod+q exec "~/.config/i3/lock"
 exec --no-startup-id xss-lock -- "~/.config/i3/lock"
 
+# Mix keymap mod across sessions
+exec_always --no-startup-id xmodmap ~/.Xmodmap
+
 # Set Transparency
 exec_always --no-startup-id picom -b
 
