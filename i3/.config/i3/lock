@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Get current wallpaper path from ~/.fehbg
+if [ -f ~/.fehbg ]; then
+    # Extract wallpaper path from .fehbg file
+    WALLPAPER=$(grep -o "'[^']*'" ~/.fehbg | head -1 | sed "s/'//g")
+    
+    # Check if wallpaper file exists
+    if [ -f "$WALLPAPER" ]; then
+        # Create temporary file for blurred wallpaper
+        TEMP_IMG=$(mktemp /tmp/i3lock_wallpaper_XXXXXX.png)
+        
+        # Blur the wallpaper (using proper blur syntax)
+        convert "$WALLPAPER" -blur 0x8 "$TEMP_IMG"
+        
+        # Lock with blurred wallpaper
+        i3lock -i "$TEMP_IMG" --tiling
+        
+        # Clean up temporary file
+        rm "$TEMP_IMG"
+    else
+        # Fallback to solid color if wallpaper not found
+        i3lock -c 000000
+    fi
+else
+    # Fallback to solid color if .fehbg doesn't exist
+    i3lock -c 000000
+fi

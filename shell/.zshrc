@@ -72,6 +72,7 @@ alias vc="vi ~/.vimrc"
 alias vp="vi ~/.vim/plugins.vim"
 alias tx="vi ~/.tmux.conf"
 alias ix="vi ~/.config/i3/config"
+alias gx="vi ~/.config/ghostty/config"
 alias cl='clear'
 alias untar='tar -zxvf'
 alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
@@ -101,8 +102,8 @@ if [[ -x "$(command -v eza)" ]]; then
 fi
 
 # autoload zsh functions
-fpath+=~/GitHub/dotfiles/zshfunctions
-autoload -Uz ~/GitHub/dotfiles/zshfunctions/**/*
+fpath+=~/GitHub/dotfiles/shell/zshfunctions
+autoload -Uz ~/GitHub/dotfiles/shell/zshfunctions/**/*
 
 # Load .zshrc specific to OS
 source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`

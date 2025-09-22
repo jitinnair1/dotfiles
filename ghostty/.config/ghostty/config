@@ -55,7 +55,7 @@ background-opacity = 0.8
 maximize = true
 
 # No titlebar
-window-decoration = none
+window-decoration = client
 
 # Keybind for quit
 keybind = global:ctrl+escape=quit
@@ -65,3 +65,6 @@ window-save-state = always
 
 # Quick Terminal on macOS
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Don't ask before closing
+confirm-close-surface= false
