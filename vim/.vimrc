@@ -90,6 +90,9 @@ set shortmess+=F
 " To setup fzf in vim
 set rtp+=/opt/homebrew/opt/fzf
 
+" OCaml
+set rtp^="$HOME/.opam/default/share/ocp-indent/vim"
+
 " Define keybindings for fzf
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
