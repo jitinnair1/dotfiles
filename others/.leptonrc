@@ -3,7 +3,7 @@
     "snippet": {
         "expanded": true,
         "newSnippetPrivate": true,
-        "sorting": "updated_at", 
+        "sorting": "updated_at",
         "sortingReverse": true
     },
     "editor" : {
