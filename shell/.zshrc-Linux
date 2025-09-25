@@ -1,45 +1,19 @@
-# NVHPC
-NVARCH="$(uname -s)_$(uname -m)"; export NVARCH
-NVCOMPILERS="/opt/nvidia/hpc_sdk"; export NVCOMPILERS
-MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/24.9/compilers/man"; export MANPATH
-PATH="$NVCOMPILERS/$NVARCH/24.9/compilers/bin:$PATH"; export PATH
-
-# MPI
-export PATH="$NVCOMPILERS/$NVARCH/24.9/comm_libs/mpi/bin:$PATH"
-export PATH="$MANPATH:$NVCOMPILERS/$NVARCH/24.9/comm_libs/hpcx:$PATH"
-export MANPATH="$MANPATH:$NVCOMPILERS/$NVARCH/24.9/comm_libs/mpi/man:$MANPATH"
 
 # Set LD_LIBRARY_PATH based on hostname
 if [[ $(hostname) == "hilliard-taa-lab" ]]; then
-    # CUDA Lib Path (Hilliard)
-    export LD_LIBRARY_PATH="/opt/nvidia/hpc_sdk/Linux_x86_64/24.9/cuda/lib64:$LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH="/opt/nvidia/hpc_sdk/Linux_x86_64/24.9/cuda/../math_libs/lib64:$LD_LIBRARY_PATH"
+    source ~/.zshrc-hilliard
 fi
 
 if [[ $(hostname) == "gpucluster" ]]; then
-    # enable spack for zsh
-    . /opt/spack/share/spack/setup-env.sh
-
-    # Custom Lib and Include Path (gpucluster)
-    export LD_LIBRARY_PATH="/home/jitin/lib:$LD_LIBRARY_PATH"
-    export SPACK_CUDA_PATH="$(spack location -i nvhpc@25.1)"
-    export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/25.1/cuda/lib64:$LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/25.1/cuda/../math_libs/lib64:$LD_LIBRARY_PATH"
-    export CPATH="/home/jitin/include:$CPATH"
-    export CUDA_TOOLKIT_ROOT="$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/bin:$CUDA_TOOLKIT_ROOT"
-    export CPPFLAGS="-I/$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/include:$CPPFLAGS"
+    source ~/.zshrc-gpucluster
 fi
+
+# opam configuration
+[[ ! -r '/home/jitin/.opam/opam-init/init.zsh' ]] || source '/home/jitin/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 
 # Ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-
-# MATLAB
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/runtime/glnxa64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/bin/glnxa64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/sys/os/glnxa64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/extern/bin/glnxa64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/sys/opengl/lib/glnxa64"
 
 # Zoxide etc.
 export PATH="$HOME/.local/bin:$PATH"
