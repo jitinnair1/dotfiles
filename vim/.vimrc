@@ -27,26 +27,6 @@ set termguicolors               "Set colours for theme
 set background=dark             "Fix vim colours within tmux
 set splitright                  "When spliting, new pane opens right (pun intented)
 
-" Text-wrap at 100 cols
-function! ToggleTextWrap()
-    if &textwidth == 100
-        " If textwidth is 100, turn off text wrap settings
-        set textwidth=0
-        set nowrap
-        set wrapmargin=0
-        echo "Text wrap disabled"
-    else
-        " Otherwise, enable text wrap settings
-        set wrap
-        set textwidth=100
-        set wrapmargin=0
-        set formatoptions+=t
-        echo "Text wrap enabled"
-    endif
-endfunction
-
-nnoremap <leader>tw :call ToggleTextWrap()<CR>
-
 " Turn on syntax highlighting
 syntax on
 
@@ -74,6 +54,7 @@ nnoremap P P=`]<C-o>
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%p%% %l:%c'
 let g:airline#extensions#ale#enabled = 1
+let g:airline_section_x = '%{PencilMode()}'
 
 " Fail-safe for vim-airline symbols incase locale is not set (eg. on remote)
 set encoding=utf-8
