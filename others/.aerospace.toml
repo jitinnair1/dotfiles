@@ -174,3 +174,10 @@ k = 'resize height -50'
 l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
+
+# Fix tiling based on https://ghostty.org/docs/help/macos-tiling-wms
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout tiling",
+]
