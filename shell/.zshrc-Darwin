@@ -41,6 +41,16 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH="`gem environment gemdir`/bin:$PATH"
 fi
 
+# opam
+[[ ! -r '/Users/jitin/.opam/opam-init/init.zsh' ]] || source '/Users/jitin/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+# bun completions
+[ -s "/Users/jitin/.bun/_bun" ] && source "/Users/jitin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # Generated for envman. Added by webi installer for golang
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
