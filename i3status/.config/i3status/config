@@ -10,5 +10,5 @@ order += "disk /"
 order += "tztime local"
 
 tztime local {
-  format_time = "%d-%m-%Y %H:%M:%S"
+  format = "%d-%m-%Y %H:%M:%S"
 }
