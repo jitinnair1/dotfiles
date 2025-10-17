@@ -110,3 +110,10 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 " Remove all trailing whitespace by pressing F5
 nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Better autocomplete
+if v:version >= 900
+  set wildoptions=pum           "For pop-up menu, only on vim versions > 9.0
+endif
+set wildmenu
+set wildmode=longest:full,list,full
