@@ -3,10 +3,6 @@ general {
     separator = " | "
 }
 
-order += "cpu_temperature 0"
-order += "memory"
-order += "load"
-order += "disk /"
 order += "tztime local"
 
 tztime local {
