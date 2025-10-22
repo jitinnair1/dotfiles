@@ -19,6 +19,7 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'vim-pandoc/vim-markdownfootnotes'
 Plug 'preservim/vim-pencil'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
 " Initialize plugin system
 call plug#end()

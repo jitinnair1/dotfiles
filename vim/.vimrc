@@ -117,3 +117,8 @@ if v:version >= 900
 endif
 set wildmenu
 set wildmode=longest:full,list,full
+
+" Copy using oscyank
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual
