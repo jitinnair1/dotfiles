@@ -20,6 +20,10 @@ Plug 'dhruvasagar/vim-prosession'
 Plug 'vim-pandoc/vim-markdownfootnotes'
 Plug 'preservim/vim-pencil'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Initialize plugin system
 call plug#end()
