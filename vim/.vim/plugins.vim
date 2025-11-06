@@ -7,7 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+Plug 'jitinnair1/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'wakatime/vim-wakatime'
 Plug 'romainl/vim-cool'
