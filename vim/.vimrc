@@ -91,6 +91,10 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Easily toggle Markdown Preview
 nmap <F6> <Plug>MarkdownPreviewToggle<CR>
 
+
+" Fix hot loading for bun etc.
+set backupcopy=yes
+
 " Persistent undo
 if has("persistent_undo")
    let target_path = expand('~/.undodir')
