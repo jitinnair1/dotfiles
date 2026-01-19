@@ -46,7 +46,6 @@ export ZSH="$HOME/.oh-my-zsh"
   copyfile
   debian
   git
-  nvm
   autoupdate
   vi-mode
   zsh-fzf-history-search
