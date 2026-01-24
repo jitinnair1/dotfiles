@@ -26,6 +26,7 @@ set hlsearch                    "Highlight items found, NOTE: vim-cool plugin au
 set termguicolors               "Set colours for theme
 set background=dark             "Fix vim colours within tmux
 set splitright                  "When spliting, new pane opens right (pun intented)
+set scrolloff=8                 "Start auto scroll after 8 lines
 
 " Turn on syntax highlighting
 syntax on
