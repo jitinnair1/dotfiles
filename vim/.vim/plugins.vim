@@ -25,6 +25,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'charlespascoe/vim-go-syntax'
+Plug 'ggml-org/llama.vim'
 
 " Initialize plugin system
 call plug#end()
