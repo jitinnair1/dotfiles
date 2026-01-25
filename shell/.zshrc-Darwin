@@ -29,9 +29,9 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
  export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
-# For compiling C, CPP
-export CPPFLAGS="-I/opt/homebrew/include"
-export LDFLAGS="-L/opt/homebrew/lib"
+# setup include and lib path for C, C++
+export CPATH="/opt/homebrew/include"
+export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
 
 # MATLAB Runtime
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Runtime/R2024b/runtime/maca64"
