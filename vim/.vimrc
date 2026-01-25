@@ -28,6 +28,9 @@ set background=dark             "Fix vim colours within tmux
 set splitright                  "When spliting, new pane opens right (pun intented)
 set scrolloff=8                 "Start auto scroll after 8 lines
 
+" Add Leader
+let mapleader="\\"
+
 " Turn on syntax highlighting
 syntax on
 
@@ -81,7 +84,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :Files<CR>
 
 " Easily toggle NERDTree on/off
-noremap <F10> :NERDTreeToggle<CR>
+noremap <Leader>pv :NERDTreeToggle<CR>
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -90,7 +93,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Easily toggle Markdown Preview
-nmap <F6> <Plug>MarkdownPreviewToggle<CR>
+nmap <Leader>md <Plug>MarkdownPreviewToggle<CR>
 
 
 " Fix hot loading for bun etc.
@@ -111,10 +114,10 @@ if has("persistent_undo")
 endif
 
 " Toggle Undotree
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 " Remove all trailing whitespace by pressing F5
-nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Better autocomplete
 if v:version >= 900
@@ -158,3 +161,6 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ asyncomplete#force_refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" llama.vim
+let g:llama_config = { 'show_info': 0 }
