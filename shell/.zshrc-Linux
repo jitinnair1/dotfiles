@@ -20,10 +20,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Ruby
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export PATH="$PATH:$HOME/gems/bin"
 
 # Zoxide etc.
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # zoxide
 eval "$(zoxide init zsh)"
