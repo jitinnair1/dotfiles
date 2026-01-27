@@ -10,3 +10,5 @@ export CPATH="/home/jitin/include:$CPATH"
 export CUDA_TOOLKIT_ROOT="$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/bin:$CUDA_TOOLKIT_ROOT"
 export CPPFLAGS="-I/$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/include:$CPPFLAGS"
 
+# spack config
+spack load nvhpc@25.1 gsl gcc curl; spack unload gcc
