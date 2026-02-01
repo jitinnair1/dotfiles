@@ -128,8 +128,10 @@ set wildmode=longest:full,list,full
 
 " Copy using oscyank
 nmap <leader>c <Plug>OSCYankOperator
-nmap <leader>cc <leader>c_
 vmap <leader>c <Plug>OSCYankVisual
+
+" Copy entrire file to clipboard
+noremap <leader>Y gg"+yG
 
 " LSP
 let g:lsp_diagnostics_enabled = 0
