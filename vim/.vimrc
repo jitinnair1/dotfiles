@@ -116,7 +116,7 @@ endif
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 " Remove all trailing whitespace by pressing F5
-nnoremap <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
 
 " Better autocomplete
 if v:version >= 900
