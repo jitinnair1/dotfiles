@@ -79,9 +79,8 @@ set rtp+=/opt/homebrew/opt/fzf
 set rtp^="$HOME/.opam/default/share/ocp-indent/vim"
 
 " Define keybindings for fzf
-nnoremap <C-p> :FZF<CR>
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-f> :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
 
 " Easily toggle NERDTree on/off
 noremap <Leader>pv :NERDTreeToggle<CR>
@@ -127,11 +126,11 @@ set wildmenu
 set wildmode=longest:full,list,full
 
 " Copy using oscyank
-nmap <leader>c <Plug>OSCYankOperator
-vmap <leader>c <Plug>OSCYankVisual
+nmap <Leader>c <Plug>OSCYankOperator
+vmap <Leader>c <Plug>OSCYankVisual
 
 " Copy entrire file to clipboard
-noremap <leader>Y gg"+yG
+noremap <Leader>Y gg"+yG
 
 " LSP
 let g:lsp_diagnostics_enabled = 0
