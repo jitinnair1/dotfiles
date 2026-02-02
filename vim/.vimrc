@@ -165,3 +165,4 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " llama.vim
 let g:llama_config = { 'show_info': 0 }
+let g:llama_config = { 'enable_at_startup': 0 }
