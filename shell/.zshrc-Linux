@@ -8,7 +8,7 @@ if [[ $(hostname) == "gpucluster" ]]; then
     source ~/.zshrc-gpucluster
 fi
 
-# Zoxide etc.
+# Local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
 # zoxide
