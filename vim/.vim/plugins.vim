@@ -26,6 +26,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'charlespascoe/vim-go-syntax'
 Plug 'ggml-org/llama.vim'
+Plug 'jitinnair1/vim-panemaxx'
 
 " Initialize plugin system
 call plug#end()
