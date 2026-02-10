@@ -20,3 +20,19 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/extern/bin/glnxa64"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Runtime/R2024b/sys/opengl/lib/glnxa64"
 
+# opencode
+export PATH=/home/jitin/.opencode/bin:$PATH
+
+# opam configuration
+[[ ! -r '/home/jitin/.opam/opam-init/init.zsh' ]] || source '/home/jitin/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+# bun completions
+[ -s "/home/jitin/.bun/_bun" ] && source "/home/jitin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Ruby
+export GEM_HOME="$HOME/gems"
+export PATH="$PATH:$HOME/gems/bin"

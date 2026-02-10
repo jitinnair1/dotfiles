@@ -8,20 +8,6 @@ if [[ $(hostname) == "gpucluster" ]]; then
     source ~/.zshrc-gpucluster
 fi
 
-# opam configuration
-[[ ! -r '/home/jitin/.opam/opam-init/init.zsh' ]] || source '/home/jitin/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-
-# bun completions
-[ -s "/home/jitin/.bun/_bun" ] && source "/home/jitin/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Ruby
-export GEM_HOME="$HOME/gems"
-export PATH="$PATH:$HOME/gems/bin"
-
 # Zoxide etc.
 export PATH="$PATH:$HOME/.local/bin"
 
