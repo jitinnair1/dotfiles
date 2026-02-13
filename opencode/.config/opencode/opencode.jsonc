@@ -1,7 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "opencode-synced",
     "opencode-gemini-auth@latest"
   ],
   "autoupdate": true
