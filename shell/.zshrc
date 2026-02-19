@@ -65,6 +65,8 @@ export LANG=en_IN.UTF-8
 # Aliases
 alias zc="vi ~/.zshrc"
 alias zl="vi ~/.zshrc-Linux"
+alias zh="vi ~/.zshrc-hilliard"
+alias zg="vi ~/.zshrc-gpucluster"
 alias zm="vi ~/.zshrc-Darwin"
 alias zs="source ~/.zshrc"
 alias vc="vi ~/.vimrc"
