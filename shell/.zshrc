@@ -81,9 +81,6 @@ alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerle
 alias f='fuck'
 alias lg='lazygit'
 
-# thefuck config
-eval $(thefuck --alias)
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

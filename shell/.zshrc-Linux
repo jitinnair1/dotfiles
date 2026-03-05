@@ -12,6 +12,9 @@ if [[ $(hostname) == "nautilus" ]]; then
     source ~/.zshrc-nautilus
 fi
 
+# thefuck config
+eval $(thefuck --alias)
+
 # Local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
