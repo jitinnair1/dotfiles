@@ -8,6 +8,10 @@ if [[ $(hostname) == "gpucluster" ]]; then
     source ~/.zshrc-gpucluster
 fi
 
+if [[ $(hostname) == "nautilus" ]]; then
+    source ~/.zshrc-nautilus
+fi
+
 # Local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
