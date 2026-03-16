@@ -85,15 +85,21 @@ alias lg='lazygit'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf config
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+if [[ -f ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+else
+  echo "fzf may not be installed or configured properly"
+fi
 
 # eza
 if [[ -x "$(command -v eza)" ]]; then
-    alias ls='eza'
-    alias la='eza --long --all --group'
-    alias lsz='eza -l --total-size -s=size -r --no-user --no-permissions'
-    alias lsr='eza -l --total-size -s=time -r --no-user --no-permissions'
-    alias lsn='eza -l --total-size -s=name --no-user --no-permissions'
+  alias ls='eza'
+  alias la='eza --long --all --group'
+  alias lsz='eza -l --total-size -s=size -r --no-user --no-permissions'
+  alias lsr='eza -l --total-size -s=time -r --no-user --no-permissions'
+  alias lsn='eza -l --total-size -s=name --no-user --no-permissions'
+else
+  echo "eza may not be installed or configured properly"
 fi
 
 # autoload zsh functions
