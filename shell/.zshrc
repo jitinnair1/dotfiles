@@ -81,6 +81,12 @@ alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerle
 alias f='fuck'
 alias lg='lazygit'
 
+# Load .zshrc specific to OS
+source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
+
+# Local binaries
+export PATH="$PATH:$HOME/.local/bin"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -106,5 +112,16 @@ fi
 fpath+=~/GitHub/dotfiles/shell/zshfunctions
 autoload -Uz ~/GitHub/dotfiles/shell/zshfunctions/**/*
 
-# Load .zshrc specific to OS
-source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
+# thefuck config
+if [[ -x "$(command -v thefuck)" ]]; then
+  eval $(thefuck --alias)
+else
+  echo "thefuck may not be installed or configured properly"
+fi
+
+# zoxide
+if [[ -x "$(command -v zoxide)" ]]; then
+  eval "$(zoxide init zsh)"
+else
+  echo "zoxide may not be installed or configured properly"
+fi
