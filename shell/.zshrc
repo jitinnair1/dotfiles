@@ -87,6 +87,9 @@ source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
 # Local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
+# syntax highlights in man using bat
+MANPAGER="sh -c 'col -bx | bat -pl man'"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
