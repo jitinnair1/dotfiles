@@ -1,0 +1,3 @@
+function send_music() {
+  rsync -avzP $@ nautilus:music/00_todo/
+}
