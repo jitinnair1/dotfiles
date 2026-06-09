@@ -27,6 +27,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'charlespascoe/vim-go-syntax'
 Plug 'ggml-org/llama.vim'
 Plug 'jitinnair1/vim-panemaxx'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Initialize plugin system
 call plug#end()
