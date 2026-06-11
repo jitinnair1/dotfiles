@@ -1,14 +1,19 @@
 # enable spack for zsh
 . /opt/spack/share/spack/setup-env.sh
 
+
+# Delay ZSH autoupdates
+export UPDATE_ZSH_DAYS=15
+ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS=8
+
 # Custom Lib and Include Path (gpucluster)
 export LD_LIBRARY_PATH="/home/jitin/lib:$LD_LIBRARY_PATH"
-export SPACK_CUDA_PATH="$(spack location -i nvhpc@25.1)"
-export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/25.1/cuda/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/25.1/cuda/../math_libs/lib64:$LD_LIBRARY_PATH"
+export SPACK_CUDA_PATH="$(spack location -i nvhpc@23.3)"
+export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/23.3/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/23.3/cuda/../math_libs/lib64:$LD_LIBRARY_PATH"
 export CPATH="/home/jitin/include:$CPATH"
-export CUDA_TOOLKIT_ROOT="$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/bin:$CUDA_TOOLKIT_ROOT"
-export CPPFLAGS="-I/$SPACK_CUDA_PATH/Linux_x86_64/25.1/compilers/include:$CPPFLAGS"
+export CUDA_TOOLKIT_ROOT="$SPACK_CUDA_PATH/Linux_x86_64/23.3/compilers/bin:$CUDA_TOOLKIT_ROOT"
+export CPPFLAGS="-I/$SPACK_CUDA_PATH/Linux_x86_64/23.3/compilers/include:$CPPFLAGS"
 
 # spack config
-spack load nvhpc@25.1 gsl gcc curl; spack unload gcc
+spack load nvhpc@23.3 gsl gcc curl; spack unload gcc
