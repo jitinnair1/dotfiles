@@ -4,7 +4,7 @@ send_kipps() {
   local rename=""
   local args=("$@")
 
-  if [[ ${#args[@]} -eq 0 ]]; then
+  if (( ${#args[@]} == 0 )); then
     echo "Usage: send_kipps <path> [<path> ...] [--rename=name]" >&2
     return 1
   fi
@@ -12,15 +12,36 @@ send_kipps() {
   #the ${VAR#PATTERN} removes the shortest match of PATTERN from start of VAR
   if [[ "${args[-1]}" == --rename=* ]]; then
     rename="${args[-1]#--rename=}"
-    unset 'args[-1]'
-    if [[ -z "$rename" ]]; then
+    if [[ -z $rename ]]; then
       echo "Error: --rename= must provide a non-empty name" >&2
       return 1
     fi
+    args=("${args[@]:0:-1}")
   fi
 
-  local dest="$dest_host:$dest_base"
-  [[ -n "$rename" ]] && dest="$dest/$rename"
+  local remote_dir="$dest_base"
+  [[ -n $rename ]] && remote_dir="$dest_base/$rename"
+  local remote_path="$dest_host:$remote_dir"
 
-  rsync -avzP "${args[@]}" "$dest/"
+  #check if remote directory exists
+  if ssh "$dest_host" "[ -d '$remote_dir' ]"; then
+    printf "Remote directory %s exists. Overwrite? [y/N]: " "$remote_dir" >&2
+    read -r reply
+    case "$reply" in
+      y|Y|yes|YES)
+        ssh "$dest_host" "rm -rf -- '$remote_dir' && mkdir -p -- '$remote_dir'"
+        ;;
+      *)
+        echo "Aborted." >&2
+        return 1
+        ;;
+    esac
+  else
+    # create remote directory
+    ssh "$dest_host" "mkdir -p -- '$remote_dir'"
+  fi
+
+  rsync -avzP "${args[@]}" "$remote_path/"
 }
+
+
