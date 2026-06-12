@@ -36,3 +36,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$PATH:$HOME/gems/bin"
+
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
