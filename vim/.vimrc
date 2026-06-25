@@ -131,6 +131,7 @@ vmap <Leader>c <Plug>OSCYankVisual
 
 " Copy entrire file to clipboard
 noremap <Leader>Y gg"+yG
+noremap <Leader>Yc ggVG<Plug>OSCYankVisual
 
 " LSP
 let g:lsp_diagnostics_enabled = 0
