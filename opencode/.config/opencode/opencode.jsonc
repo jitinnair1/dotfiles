@@ -1,7 +1,21 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "opencode-gemini-auth@latest"
-  ],
-  "autoupdate": true
+  "provider": {
+    "llama-cpp": {
+      "name": "llama-cpp on gpucluster",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://10.194.33.12:1337/v1"
+      },
+      "models": {
+        "ggml-org/gpt-oss-120b-GGUF": {
+          "name": "GPT-OSS 120B"
+        }
+      }
+    }
+  },
+  "server": {
+    "port": 1348,
+    "hostname": "0.0.0.0"
+  }
 }
