@@ -8,14 +8,13 @@
         "baseURL": "http://10.194.33.12:1337/v1"
       },
       "models": {
-        "ggml-org/gpt-oss-120b-GGUF": {
+        "unsloth/gpt-oss-120b-GGUF:Q4_K_M": {
           "name": "GPT-OSS 120B"
+        },
+        "unsloth/gemma-4-31B-it-GGUF": {
+          "name": "Gemma4-31B"
         }
       }
     }
-  },
-  "server": {
-    "port": 1348,
-    "hostname": "0.0.0.0"
   }
 }
