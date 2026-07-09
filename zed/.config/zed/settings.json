@@ -10,6 +10,23 @@
 
 {
   // theme and ui
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "theme": "Catppuccin Macchiato - No Italics",
   "ui_font_size": 16,
   "buffer_font_family": "MesloLGS NF",
