@@ -15,6 +15,21 @@
           "name": "Gemma4-31B"
         }
       }
+    },
+    "llama-swap": {
+      "name": "llama-swap on hilliard",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://10.194.12.113:1776/v1"
+      },
+      "models": {
+        "gemma-4-26B-A4B": {
+          "name": "Gemma-4 26B A4B"
+        },
+        "gpt-oss-20B": {
+          "name": "GPT OSS 20B"
+        }
+      }
     }
   }
 }
