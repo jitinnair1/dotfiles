@@ -134,13 +134,15 @@ noremap <Leader>Y gg"+yG
 noremap <Leader>Yc ggVG<Plug>OSCYankVisual
 
 " LSP
-let g:lsp_diagnostics_enabled = 0
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_use_native_client = 1
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gi <plug>(lsp-implementation)
     nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> K <plug>(lsp-hover)
 endfunction
 
@@ -150,8 +152,8 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" Autocompletions without auto popup
-let g:asyncomplete_auto_popup = 0
+" Autocompletions
+let g:asyncomplete_auto_popup = 1
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -163,6 +165,21 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ asyncomplete#force_refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Language specific LSP setup
+let g:lsp_settings = {
+\  'clangd': {
+\    'cmd': ['/usr/bin/clangd'],
+\    'args': [
+\      'clangd',
+\      '--background-index',
+\      '--query-driver=/usr/bin/g++,/usr/bin/gcc,/usr/bin/clang++,/usr/bin/clang'
+\    ]
+\  }
+\}
+
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
 
 " llama.vim
 let g:llama_config = { 'show_info': 0 }
