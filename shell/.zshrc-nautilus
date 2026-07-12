@@ -4,8 +4,5 @@ export PATH=$PATH:$HOME/go/bin
 # opencode
 export PATH=/home/jitin/.opencode/bin:$PATH
 
-#set editor for sudoedit
-export EDITOR=vi
-
 # homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"

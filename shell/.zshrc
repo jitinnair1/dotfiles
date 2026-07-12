@@ -82,6 +82,9 @@ alias p10k_upgrade="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerle
 alias f='fuck'
 alias lg='lazygit'
 
+# set Editor
+export EDITOR=vim
+
 # Load .zshrc specific to OS
 source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
 
