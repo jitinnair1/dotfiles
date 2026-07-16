@@ -84,6 +84,7 @@ alias lg='lazygit'
 
 # set Editor
 export EDITOR=vim
+export VISUAL=vim
 
 # Load .zshrc specific to OS
 source ${ZDOTDIR:-${HOME}}/.zshrc-`uname`
