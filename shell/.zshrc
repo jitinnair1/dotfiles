@@ -117,6 +117,11 @@ fi
 fpath+=~/GitHub/dotfiles/shell/zshfunctions
 autoload -Uz ~/GitHub/dotfiles/shell/zshfunctions/**/*
 
+# edit command buffer
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
 # thefuck config
 if [[ -x "$(command -v thefuck)" ]]; then
   eval $(thefuck --alias)
