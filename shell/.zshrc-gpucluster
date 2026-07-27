@@ -1,13 +1,16 @@
 # enable spack for zsh
 . /opt/spack/share/spack/setup-env.sh
 
-
 # Delay ZSH autoupdates
 export UPDATE_ZSH_DAYS=15
 ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS=8
 
 # Custom Lib and Include Path (gpucluster)
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export LD_LIBRARY_PATH="/home/jitin/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/jitin/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 export SPACK_CUDA_PATH="$(spack location -i nvhpc@23.3)"
 export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/23.3/cuda/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="$SPACK_CUDA_PATH/Linux_x86_64/23.3/cuda/../math_libs/lib64:$LD_LIBRARY_PATH"
