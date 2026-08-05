@@ -180,8 +180,3 @@ let g:lsp_settings = {
 
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
-
-" llama.vim
-let g:llama_config = { 'show_info': 0 }
-let g:llama_config = { 'enable_at_startup': 0 }
-noremap <Leader>ll = :LlamaToggle<CR>
