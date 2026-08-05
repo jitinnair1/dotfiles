@@ -10,6 +10,11 @@
 
 {
   // theme and ui
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "api_url": ""
+    }
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -31,7 +36,7 @@
   "ui_font_size": 16,
   "buffer_font_family": "MesloLGS NF",
   "buffer_font_size": 16,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "multi_cursor_modifier": "cmd_or_ctrl",
   "format_on_save": "off",
 
@@ -58,5 +63,12 @@
     "scss": true,
     "matlab": true,
     "git-firefly": true
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"]
+    }
   }
 }
