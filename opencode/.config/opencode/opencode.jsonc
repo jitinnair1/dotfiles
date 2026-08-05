@@ -9,12 +9,17 @@
         "baseURL": "http://10.194.33.12:1337/v1"
       },
       "models": {
-        "unsloth/gpt-oss-120b-GGUF:Q4_K_M": {
+        "ggml-org/gpt-oss-120b-GGUF:Q4_K_M": {
           "name": "GPT-OSS 120B"
         },
-        "unsloth/gemma-4-31B-it-GGUF": {
-          "name": "Gemma4-31B"
+        "ggml-org/Qwen3.6-35B-A3B-GGUF": {
+          "name": "Qwen-3.6-35B-A3B"
         }
+      },
+      "compaction": {
+        "auto": true,
+        "prune": true,
+        "reserved": 40000
       }
     },
     "llama-swap": {
