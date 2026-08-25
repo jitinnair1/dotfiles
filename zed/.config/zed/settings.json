@@ -65,6 +65,9 @@
     "git-firefly": true
   },
   "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry"
+    },
     "OpenCode": {
       "type": "custom",
       "command": "opencode",
