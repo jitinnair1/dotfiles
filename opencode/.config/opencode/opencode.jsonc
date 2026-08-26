@@ -12,8 +12,8 @@
         "ggml-org/gpt-oss-120b-GGUF:Q4_K_M": {
           "name": "GPT-OSS 120B"
         },
-        "ggml-org/Qwen3.6-35B-A3B-GGUF": {
-          "name": "Qwen-3.6-35B-A3B"
+        "ggml-org/Qwen3.8-35B-A3B-GGUF": {
+          "name": "Qwen-3.8-27B"
         }
       },
       "compaction": {
