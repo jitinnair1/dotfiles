@@ -9,10 +9,10 @@
         "baseURL": "http://10.194.33.12:1337/v1"
       },
       "models": {
-        "ggml-org/gpt-oss-120b-GGUF:Q4_K_M": {
+        "unsloth/gpt-oss-120b-GGUF:UD-Q8_K_XL": {
           "name": "GPT-OSS 120B"
         },
-        "ggml-org/Qwen3.8-35B-A3B-GGUF": {
+        "unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL": {
           "name": "Qwen-3.8-27B"
         }
       },
