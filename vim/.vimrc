@@ -134,7 +134,7 @@ noremap <Leader>Y gg"+yG
 noremap <Leader>Yc ggVG<Plug>OSCYankVisual
 
 " LSP
-let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_enabled = 0
 let g:lsp_use_native_client = 1
 
 function! s:on_lsp_buffer_enabled() abort
@@ -167,6 +167,20 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Language specific LSP setup
+autocmd BufNewFile,BufRead *.cu,*.cuh set filetype=cuda
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'root_uri': {server_info->lsp#utils#path_to_uri(
+        \     lsp#utils#find_nearest_parent_file_directory(
+        \         lsp#utils#get_buffer_path(),
+        \         ['.clangd', 'compile_commands.json', '.git']
+        \     ))},
+        \ 'whitelist': ['c', 'cpp', 'cuda'],
+        \ })
+endif
+
 let g:lsp_settings = {
 \  'clangd': {
 \    'cmd': ['/usr/bin/clangd'],
