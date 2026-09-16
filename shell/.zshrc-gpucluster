@@ -19,4 +19,4 @@ export CUDA_TOOLKIT_ROOT="$SPACK_CUDA_PATH/Linux_x86_64/23.3/compilers/bin:$CUDA
 export CPPFLAGS="-I/$SPACK_CUDA_PATH/Linux_x86_64/23.3/compilers/include:$CPPFLAGS"
 
 # spack config
-spack load nvhpc@23.3 gsl gcc curl; spack unload gcc
+spack load nvhpc@23.3 gsl gcc curl tbb; spack unload gcc
