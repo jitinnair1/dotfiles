@@ -9,11 +9,8 @@
         "baseURL": "http://10.194.33.12:1337/v1"
       },
       "models": {
-        "unsloth/gpt-oss-120b-GGUF:UD-Q8_K_XL": {
-          "name": "GPT-OSS 120B"
-        },
-        "unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL": {
-          "name": "Qwen-3.8-27B"
+        "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q8_K_XL": {
+          "name": "Qwen-3.6-35B-A3B"
         }
       },
       "compaction": {
