@@ -34,5 +34,18 @@
         }
       }
     }
+  },
+  "mcp": {
+    "nvidia-cuda-docs": {
+      "type": "remote",
+      "url": "https://api.copilot.nsight.ngc.nvidia.com/mcp/cuda-docs"
+    },
+    "git": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "mcp-server-git"
+      ]
+    }
   }
 }
